@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buscar pedido</title>
+<style>
+  :root{color-scheme: light dark;}
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0f1115;color:#f2f2f2;margin:0;padding:20px;min-height:100vh;}
+  .wrap{max-width:480px;margin:0 auto;}
+  h1{font-size:20px;margin:0 0 4px;}
+  p.hint{color:#9aa0a8;font-size:13.5px;margin:0 0 22px;}
+  label{display:block;font-size:13px;color:#c7cbd1;margin:14px 0 6px;}
+  input{width:100%;padding:13px 14px;border-radius:10px;border:1px solid #2a2e37;background:#1a1d24;color:#fff;font-size:16px;}
+  input:focus{outline:2px solid #009ee3;}
+  button{width:100%;margin-top:18px;padding:14px;border:none;border-radius:10px;background:#009ee3;color:#fff;font-weight:700;font-size:15px;cursor:pointer;}
+  button:disabled{opacity:.6;}
+  .err{color:#ff6b8a;font-size:13.5px;margin-top:10px;min-height:16px;}
+  .card{margin-top:24px;background:#1a1d24;border:1px solid #2a2e37;border-radius:14px;padding:18px;display:none;}
+  .card.show{display:block;}
+  .badge{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:12px;}
+  .badge.pendiente_pago{background:#4a3c14;color:#ffcf6b;}
+  .badge.approved{background:#123c2a;color:#5be08a;}
+  .badge.pending, .badge.in_process{background:#3c3414;color:#ffcf6b;}
+  .badge.rejected{background:#3c1414;color:#ff8b8b;}
+  .row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid #262a32;font-size:14.5px;}
+  .row:last-child{border-bottom:none;}
+  .row b{text-align:right;}
+  .items{margin-top:14px;font-size:14px;color:#d5d8dc;}
+  .items div{padding:4px 0;}
+  .copybtn{margin-top:14px;background:transparent;border:1px solid #2a2e37;color:#c7cbd1;font-weight:600;font-size:13.5px;padding:10px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Buscar pedido</h1>
+  <p class="hint">Pegá el código de referencia que ves en el pago dentro de Mercado Pago (ej: BA-MUC32PNBR188).</p>
+
+  <label for="ref">Código de referencia</label>
+  <input id="ref" placeholder="BA-XXXXXXXX" autocapitalize="characters" autocomplete="off">
+
+  <label for="clave">Clave (si configuraste una)</label>
+  <input id="clave" type="password" placeholder="Opcional" autocomplete="off">
+
+  <button id="buscar">Buscar</button>
+  <p class="err" id="err"></p>
+
+  <div class="card" id="card">
+    <span class="badge" id="badge"></span>
+    <div class="row"><span>Cliente</span><b id="v-nombre"></b></div>
+    <div class="row"><span>Instagram</span><b id="v-ig"></b></div>
+    <div class="row"><span>Teléfono</span><b id="v-tel"></b></div>
+    <div class="row"><span>Zona</span><b id="v-zona"></b></div>
+    <div class="row"><span>Dirección</span><b id="v-dir"></b></div>
+    <div class="row"><span>Barrio</span><b id="v-barrio"></b></div>
+    <div class="row" id="row-acl"><span>Aclaraciones</span><b id="v-acl"></b></div>
+    <div class="row"><span>Total</span><b id="v-total"></b></div>
+    <div class="items" id="v-items"></div>
+    <button class="copybtn" id="copiar">📋 Copiar dirección completa</button>
+  </div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money = n => "$" + Number(n||0).toLocaleString("es-AR");
+
+const nombresEstado = {
+  pendiente_pago: "Pendiente de pago",
+  approved: "✅ Pagado",
+  pending: "⏳ Pago pendiente",
+  in_process: "⏳ Pago en proceso",
+  rejected: "❌ Pago rechazado",
+};
+
+async function buscar(){
+  const ref = $("#ref").value.trim();
+  const clave = $("#clave").value;
+  $("#err").textContent = "";
+  $("#card").classList.remove("show");
+  if(!ref){ $("#err").textContent = "Pegá un código de referencia"; return; }
+
+  const btn = $("#buscar");
+  btn.disabled = true; btn.textContent = "Buscando…";
+  try{
+    const r = await fetch("/api/buscar-pedido?ref=" + encodeURIComponent(ref) + "&clave=" + encodeURIComponent(clave));
+    const data = await r.json();
+    if(!r.ok){ $("#err").textContent = data.error || "No se pudo buscar el pedido"; return; }
+
+    $("#badge").textContent = nombresEstado[data.estado] || data.estado;
+    $("#badge").className = "badge " + data.estado;
+    $("#v-nombre").textContent = data.cliente.nombre || "-";
+    $("#v-ig").textContent = data.cliente.ig || "-";
+    $("#v-tel").textContent = data.cliente.tel || "-";
+    $("#v-zona").textContent = data.cliente.zona || "-";
+    $("#v-dir").textContent = data.cliente.dir || "-";
+    $("#v-barrio").textContent = data.cliente.barrio || "-";
+    $("#row-acl").style.display = data.cliente.acl ? "flex" : "none";
+    $("#v-acl").textContent = data.cliente.acl || "";
+    $("#v-total").textContent = money(data.total);
+    $("#v-items").innerHTML = (data.items||[]).map(i =>
+      `<div>• ${esc(i.nombre)}${i.color?` — ${esc(i.color)}`:""} — Talle ${esc(i.size)} × ${esc(i.qty)}</div>`
+    ).join("");
+    $("#card").classList.add("show");
+
+    $("#copiar").onclick = () => {
+      const texto = `${data.cliente.nombre}\nTel: ${data.cliente.tel}\n${data.cliente.dir}, ${data.cliente.barrio} (${data.cliente.zona})${data.cliente.acl?`\n${data.cliente.acl}`:""}`;
+      navigator.clipboard.writeText(texto).then(()=>{ $("#copiar").textContent = "✅ Copiado"; setTimeout(()=> $("#copiar").textContent="📋 Copiar dirección completa", 1500); });
+    };
+  }catch(e){
+    $("#err").textContent = "No se pudo conectar. Probá de nuevo.";
+  }finally{
+    btn.disabled = false; btn.textContent = "Buscar";
+  }
+}
+
+$("#buscar").onclick = buscar;
+$("#ref").addEventListener("keydown", e => { if(e.key==="Enter") buscar(); });
+$("#clave").addEventListener("keydown", e => { if(e.key==="Enter") buscar(); });
+</script>
+</body>
+</html>

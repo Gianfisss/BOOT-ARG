@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "boot-arg-tienda",
+  "main": "src/index.js",
+  "compatibility_date": "2026-06-01",
+
+  // Tu sitio (index.html, pedidos.html) se sirve desde la carpeta public/
+  "assets": { "directory": "./public" },
+
+  // Base de datos de pedidos y stock. Pegá acá el id que te da:
+  //   npx wrangler kv namespace create TIENDA
+  "kv_namespaces": [
+    { "binding": "TIENDA", "id": "e8e659ef3e4a40d6a0bf8661b1e970ad" }
+  ],
+
+  // Sincronización de stock con el proveedor, cada hora (hora UTC)
+  "triggers": { "crons": ["0 * * * *"] },
+
+  "observability": { "enabled": true }
+}

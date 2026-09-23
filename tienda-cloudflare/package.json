@@ -1,0 +1,12 @@
+{
+  "name": "boot-arg-tienda",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "catalogo": "node scripts/generar-catalogo.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

@@ -1,0 +1,1887 @@
+{
+  "marca": "BOOT.ARG",
+  "moneda": "$",
+  "productos": [
+    {
+      "id": "b1",
+      "nombre": "Nike Lunar Gato II",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "antes": 130000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8807643b993916ea400fa5a6aa178a70-Uhd9Ta5JDOHHf2Aba5XDoFb08FLNOU.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Lima",
+          "hex": "#b3db00",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8807643b993916ea400fa5a6aa178a70-Uhd9Ta5JDOHHf2Aba5XDoFb08FLNOU.jpg",
+          "sinStock": [
+            38,
+            44,
+            45
+          ]
+        },
+        {
+          "nombre": "Gris / Rosa",
+          "hex": [
+            "#c2bcb8",
+            "#bd5bb1"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/3d400990f831a8294057e34d84af983c-WknNuPSSIdhTs6uWYrv6VLagynrGJA.jpg",
+          "sinStock": [
+            38,
+            39,
+            40,
+            41,
+            43,
+            44,
+            45
+          ]
+        },
+        {
+          "nombre": "Rosa",
+          "hex": "#fc4475",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/fd858452560c72a0e808c9457f91eae9-k0KA8WVelwuYqABfVrZcIaY6kUOSIC.jpg",
+          "sinStock": [
+            37,
+            39,
+            40,
+            41,
+            42,
+            44,
+            45
+          ]
+        },
+        {
+          "nombre": "Beige",
+          "hex": "#cfcfc2",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/4d19ab37e350617eafbd6e788f6fc350-IPW8Nmu9wknRoXZaWrh2evR0zxYhDs.jpg",
+          "sinStock": [
+            38,
+            39,
+            40,
+            41,
+            43,
+            44,
+            45
+          ]
+        },
+        {
+          "nombre": "Amarillo",
+          "hex": "#c7b375",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/363212fa5b2e045ee151b6dee816a354-ODvbFBlvqDAISQnKjz0qetnl8K7Eg7.jpg",
+          "sinStock": [
+            41,
+            44
+          ]
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#e3e3e3",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/10b3eed2da9bdbe6a7d05e8434f280e1-Duw83eqDXUz9JNAzOaoInX9luJN5J2.jpg",
+          "sinStock": [
+            38,
+            40,
+            42,
+            43,
+            44,
+            45
+          ]
+        },
+        {
+          "nombre": "Rojo / Blanco",
+          "hex": [
+            "#942637",
+            "#e8e8e8"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/30543eecaf14ec5bb5fd08c1604218e8-Zu4H4Vb2OQxNzhN6srpZNLyP29VwgE.jpg",
+          "sinStock": [
+            38,
+            39,
+            40,
+            41,
+            43,
+            44,
+            45
+          ]
+        },
+        {
+          "nombre": "Verde Camuflado",
+          "hex": "#5d5e3c",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d9090d35d09358f918d7779620773d33-uYtQrYDindcLKlvqYQes4P4V7f1ks6.jpg",
+          "sinStock": [
+            38,
+            40,
+            42,
+            43,
+            44,
+            45
+          ]
+        },
+        {
+          "nombre": "Celeste",
+          "hex": "#5885a6",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/068e71f28dc66aef7bf1de404504c03e-LZE2tmrEv1sw7kZB0rUclK0RLe76QP.jpg",
+          "sinStock": [
+            38,
+            39,
+            40,
+            42,
+            43,
+            44,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2",
+      "nombre": "Adidas F50 MESSI",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "antes": 140000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/400254599c55183ea500f3cbf4ce2f96-IPI3w72oBEBYcoWeNMnNWnY8ZhVTJV.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b3",
+      "nombre": "Adidas F50 MESSI",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "antes": 150000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d2429e4d5c11ee6a9d0a283dcf0278de-g4QuIdUnGHOUtJDPK95PDyg3OCCKVG.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b4",
+      "nombre": "Joma Top Flex",
+      "cat": "Papi / Futsal",
+      "precio": 115000,
+      "antes": 130000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8b8e2179b8dd62e4f2b544cb2b69b194-WX5aqqxn4QlrdwEAvfLklLzMiNG02j.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b5",
+      "nombre": "Nike Tiempo Legend",
+      "cat": "Sintético",
+      "precio": 129000,
+      "antes": 169000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1789250906474-9ad5152763c4c04bec1abaf9_display-r7I3jeaH4SRqnbigehqw2Ks7Ldr1le.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Esmeralda",
+          "hex": "#467c75",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1789250906474-9ad5152763c4c04bec1abaf9_display-r7I3jeaH4SRqnbigehqw2Ks7Ldr1le.webp"
+        },
+        {
+          "nombre": "Negro / Blanco",
+          "hex": "#0f1114",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893159186-92139caf7cab60c0bdab23f0_display-IgKY94B0EkRkW2LA9ctdaaAWvrAzbn.webp"
+        }
+      ]
+    },
+    {
+      "id": "b6",
+      "nombre": "Nike Tiempo React",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "antes": 150000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1f1cc34826b4cd5963800fcd94d9b37b-nTSIMyPudgL9kR9l5LtRUmROBiEQHl.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Negro",
+          "hex": "#0f1114",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1f1cc34826b4cd5963800fcd94d9b37b-nTSIMyPudgL9kR9l5LtRUmROBiEQHl.jpg"
+        },
+        {
+          "nombre": "Blanco / Gris",
+          "hex": "#8d949c",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/db2e2b25deb8d055a6932d816919c018-UyJq3AQGQW3cOly4MnJ3K48q5z6Suq.jpg"
+        },
+        {
+          "nombre": "Salmón",
+          "hex": "#fa657d",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779224407618-1a56f36e96be3a9dd7793ef9_display-wLFIhq6yiWl9umojJo4D5XC0tVGOkO.webp"
+        }
+      ]
+    },
+    {
+      "id": "b8",
+      "nombre": "Nike React Gato",
+      "cat": "Papi / Futsal",
+      "precio": 115000,
+      "antes": 150000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/eb7a864b7e142e3427c9fa62c0d7ddd0-2gpPtdkBH5W7HdbeCHLNaSWZdasiyO.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b9",
+      "nombre": "Nike Phantom",
+      "cat": "Sintético",
+      "precio": 129000,
+      "antes": 150000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/ca85bee74db55e371f7f85472eda939f-jmgA1y0Us4pG3FwCXUZ2GLLIqHY6yG.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b11",
+      "nombre": "Nike Magista",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "antes": 170000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8a25b4bd018ab39d3a19dcff6c674fea-cRS1gPjYfcnYdXndDSyNU5qxHu7Y57.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Gris oscuro",
+          "hex": "#2e373d",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8a25b4bd018ab39d3a19dcff6c674fea-cRS1gPjYfcnYdXndDSyNU5qxHu7Y57.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#dbdcdb",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d9a6915ed2c26ebd95687a8c9ea17922-TI56XQopsj0AH0IvA0BUqSNjmlBjhY.jpg"
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "nombre": "Adidas Copa Mundial 20.1",
+      "cat": "Papi / Futsal",
+      "precio": 120000,
+      "antes": 150000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/be6b15be5426b5b717bd1e89465ed7f3-1YtASHbTi0bVVe0yTumoGBIXN6eyfz.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b13",
+      "nombre": "Nike Street Gato 5",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/59a6a8cec885af646893f5d8b21b179a-sQgTppx7pP1mJxkPexYpGBKbIMO9p7.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Azul / Negro",
+          "hex": "#113680",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/59a6a8cec885af646893f5d8b21b179a-sQgTppx7pP1mJxkPexYpGBKbIMO9p7.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#babbbe",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893237706-c89be940b2a9569427a8ee0c_display-4w4tQUOOlMqORvDpDVP22JUL3pM3K0.webp"
+        },
+        {
+          "nombre": "Negro",
+          "hex": "#020204",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893260548-50a383f26540a7a7eee3f994_display-jCe6eOzLJVfg5K0Guwtk7bUFVkj95B.webp"
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "nombre": "Adidas Top Sala",
+      "cat": "Papi / Futsal",
+      "precio": 115000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/95d40c8f96aa7c723befa4769b2dd1e6-WQpfnrlml0FXFkEMTfppXti3jnwQwD.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Azul",
+          "hex": "#2c4a98",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/95d40c8f96aa7c723befa4769b2dd1e6-WQpfnrlml0FXFkEMTfppXti3jnwQwD.jpg"
+        },
+        {
+          "nombre": "Bordó",
+          "hex": "#602a33",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5faa32c3429bd9a67094a25d660d8771-DXHDaexMCk4FJVYJ5ESIHaHBaIXxV4.jpg"
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "nombre": "Nike Tiempo X Lunarloon",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/0df71b75211355a008f6a7c614d520d0-FVQTJpmiHWFemnykxcJSEDUHLjiwPa.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b16",
+      "nombre": "Nike Mercurial Air Zoom Sintético",
+      "cat": "Sintético (TF)",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5dff0998d97714e4d82b383fc4cc2615-7hJ7sE6YddxXXT4gkRP2vvG3eHNI58.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44
+      ],
+      "colores": [
+        {
+          "nombre": "Celeste / Azul",
+          "hex": [
+            "#9bcfcf",
+            "#00608a"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5dff0998d97714e4d82b383fc4cc2615-7hJ7sE6YddxXXT4gkRP2vvG3eHNI58.jpg"
+        }
+      ],
+      "desc": "Livianas, con malla de sujeción incluida."
+    },
+    {
+      "id": "b17",
+      "nombre": "Nike Tiempo React Sintético",
+      "cat": "Sintético (TF)",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/29a6b29ec58a72b7a40d31ef939fc298-RKnLfN8CXU9KGWvopG7GWfWWiserPc.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Plateado",
+          "hex": "#8d949c",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/29a6b29ec58a72b7a40d31ef939fc298-RKnLfN8CXU9KGWvopG7GWfWWiserPc.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#d6d7d2",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/0ae39d30da3747a301388977902480d3-FQp2GuF6meLnlgxM0tC3osm2L1cue1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "b18",
+      "nombre": "Adidas F50 MESSI Sintético",
+      "cat": "Sintético (TF)",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/4e9b07e1692bd30bd7d29bc9a2e5105e-N6J84mTF6A20pYamB88QMQOeiRKGJo.jpg",
+      "top": false,
+      "nuevo": true,
+      "talles": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "sinStock": [],
+      "desc": "Tapón bajo multitaco para césped sintético."
+    },
+    {
+      "id": "b19",
+      "nombre": "Nike Mercurial AIR Zoom",
+      "cat": "Campo (FG)",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/cae972c97e2b31c04cff44293ad0a27e-1DhuxFUBpyKFnNoz5ZEYvkQLjTOSxE.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "sinStock": [
+        45
+      ],
+      "colores": [
+        {
+          "nombre": "Rosa",
+          "hex": "#de314f",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/cae972c97e2b31c04cff44293ad0a27e-1DhuxFUBpyKFnNoz5ZEYvkQLjTOSxE.jpg"
+        },
+        {
+          "nombre": "Fuxia",
+          "hex": "#d52f5d",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/57af025b19f2e805649eb0d48bc3a06d-SrMasqlH4W0mouqyrtbOTrz13LIrBa.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#dfdfdf",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786907524134-693763a36c9954659e3e95f4_display-tgJFujQPuNcA9GtmSiDGwLA0jFOaE7.webp"
+        }
+      ],
+      "desc": "Cuero flexible, el clásico de toda la vida."
+    },
+    {
+      "id": "b20",
+      "nombre": "Adidas Predator ELITE",
+      "cat": "Campo (FG)",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/6cc659ee200a9b144f6554a23f8ae29a-wnvE4Z1bjmfH3U4Me1pAk69QfF5WVk.jpg",
+      "top": true,
+      "nuevo": true,
+      "talles": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco / Rojo",
+          "hex": [
+            "#f2f2f2",
+            "#b01a31"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/6cc659ee200a9b144f6554a23f8ae29a-wnvE4Z1bjmfH3U4Me1pAk69QfF5WVk.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#f2f2f2",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/9a3b40aedf8a4c33308f1275724e290b-fDSRVCTA3kmJLy0LYinnDr0ddA4Wpm.jpg"
+        }
+      ],
+      "desc": "Sin cordones, calce tipo media. Toque limpio."
+    },
+    {
+      "id": "b21",
+      "nombre": "Nike Mercurial 360",
+      "cat": "Campo (FG)",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/b7655f970a913fb2420ae9bd0b8192af-HPgDmFteaeFoyvFOERPchFZ0mJcKPX.jpg",
+      "top": true,
+      "nuevo": true,
+      "talles": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [
+        42,
+        44,
+        45
+      ],
+      "colores": [
+        {
+          "nombre": "Violeta",
+          "hex": "#513e94",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/b7655f970a913fb2420ae9bd0b8192af-HPgDmFteaeFoyvFOERPchFZ0mJcKPX.jpg"
+        }
+      ],
+      "desc": "Botín liviano con excelente control y velocidad."
+    },
+    {
+      "id": "b22",
+      "nombre": "Nike Tiempo Legend ACC",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d1fd05709668af4dda2f2443e14162bd-e7esEJP3GWocjNjffoZLTbFoaKzHcM.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b23",
+      "nombre": "Adidas F50 Messi",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/725aa1e2993d3c4c2e5f7bd48d9cfd50-I2uHioAGhMUs7mSLWifCA9S6C3TLIH.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b24",
+      "nombre": "Nike Tiempo Legend ÉLITE",
+      "cat": "Campo (FG)",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5a58d810ba82b41ccddd3e984c60702c-0MDbB6tlnyTlEhPAu5iMhR4PImmjxI.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b25",
+      "nombre": "Nike Mercurial AIR Zoom",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/37a93e536d0b2d9a9c62c415caefa530-A2vGxkry9GWy8nyhZMzEK1vu2BoSsc.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Negro",
+          "hex": "#000000",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/37a93e536d0b2d9a9c62c415caefa530-A2vGxkry9GWy8nyhZMzEK1vu2BoSsc.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#c6baae",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223195557-864eb00a3f83ed358299bf7c_display-9o9pYOX7JSLMAQw0Vkul2aqBPDbnAg.webp"
+        },
+        {
+          "nombre": "Amarillo",
+          "hex": "#c8c2a3",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223798673-9383db6f98c920d1f5b05820_display-CekwF4G7af6G7iwlWkvvUUnDvjKFG5.webp"
+        }
+      ]
+    },
+    {
+      "id": "b26",
+      "nombre": "Nike Tiempo Legend Emerald",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/24ca4427eee0ea9a4468a576371d4983-jUUU7oaYdJjGBwpLrUkeWf89bRRMSP.jpg",
+      "top": true,
+      "nuevo": true,
+      "talles": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "sinStock": [],
+      "desc": "Construcción premium para máximo rendimiento."
+    },
+    {
+      "id": "b27",
+      "nombre": "Nike Tiempo Legend ÉLITE",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/a6d04d9370cb0591a42a39b3c0a7d584-xhj1L3pPL2V8tiIyrmTGH1Vtog8UMs.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b28",
+      "nombre": "Nike Tiempo Legend Emerald ÉLITE",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/543f65da60229f170a470236a060e36c-Pb3Wl8yiJuiGGLSJCwbtePOr0yj6il.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b29",
+      "nombre": "Nike Mercurial Air Zoom PRO",
+      "cat": "Campo (FG)",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223391168-a49d60f613c8df1be00d1862_display-NyUEIBsxryefN7bIw2pSrHpCYv6FL6.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#e0dfe2",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223391168-a49d60f613c8df1be00d1862_display-NyUEIBsxryefN7bIw2pSrHpCYv6FL6.webp"
+        },
+        {
+          "nombre": "Fuxia",
+          "hex": "#c63068",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/05039e796917bb46fca23c232b9c7c1a-CXuVYgGHYyt4dHZrmkjv4VpwtAea05.jpg"
+        }
+      ]
+    },
+    {
+      "id": "b30",
+      "nombre": "Nike Mercurial Hypervenom ACC",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/675802a7f12fd4c3166927ed7b14e851-NPLy1TczCPryhSQnucq4m9TftAUJJZ.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b31",
+      "nombre": "Nike Tiempo React PRO",
+      "cat": "Campo (FG)",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d0b68191094a94da2640d032ef6c5a2e-Neo5dX7lI0I7C3mdpqN7WfAzAlWLLS.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b32",
+      "nombre": "Nike Phantom GX PRO",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1a8621e68dd15f67583e77215d2bea54-ctpMEnR56oQETDULk6lGinvV3wZdno.jpg",
+      "top": true,
+      "nuevo": false,
+      "talles": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "sinStock": [
+        45
+      ],
+      "colores": [
+        {
+          "nombre": "Negro",
+          "hex": "#111111",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1a8621e68dd15f67583e77215d2bea54-ctpMEnR56oQETDULk6lGinvV3wZdno.jpg"
+        },
+        {
+          "nombre": "Fuxia",
+          "hex": "#d00460",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/a28c96d872a383571f63d6b98f3cef0d-fIX517pgVtRe9oAF3Ugn6sgsoj2IE5.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#fafafa",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/4f915d3ebda18aee8180998e37d582bc-e7XSv17jR7M670PSH4UfDblXBukC7m.jpg"
+        },
+        {
+          "nombre": "Gris",
+          "hex": "#8d949c",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/ca6d19bcabf7acb46c20d9e870df0076-xEV41hyodfkgUYImhLvAOOu4Wv31hX.jpg"
+        },
+        {
+          "nombre": "Lila",
+          "hex": "#8885a8",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8b0cfb019eccb68c2a85d7acf4e5bf9b-xbQauVejjYNqKJgO8BzXZlNhoiTLg6.jpg"
+        }
+      ],
+      "desc": "Diseñado para jugadores que buscan precisión y control."
+    },
+    {
+      "id": "b33",
+      "nombre": "Nike Phantom GX PRO",
+      "cat": "Campo (FG)",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/551bdc341330975c8d35b2c17265810e-AOMDaU8XU5zwAnRoRem0uIuPWJ0G9t.jpg",
+      "top": true,
+      "nuevo": false,
+      "talles": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "sinStock": [
+        45
+      ],
+      "colores": [
+        {
+          "nombre": "Blanco / Celeste",
+          "hex": [
+            "#fafafa",
+            "#1a95ba"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/551bdc341330975c8d35b2c17265810e-AOMDaU8XU5zwAnRoRem0uIuPWJ0G9t.jpg"
+        }
+      ],
+      "desc": "Diseñado para jugadores que buscan precisión y control."
+    },
+    {
+      "id": "b35",
+      "nombre": "Nike Gato SB",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8b1142a8e2551638202ac9d9fd9c8f39-FnnyKyWVdj5KXkZH2yhNQ9IHh3FUaz.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b36",
+      "nombre": "Nike Tiempo React PRO",
+      "cat": "Papi / Futsal",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/05ef76d9e63f20de86e4a1597ff1890b-4Qkl1zRUBxjfYEObx2UdM8GyDwIRLj.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#dcdddb",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/05ef76d9e63f20de86e4a1597ff1890b-4Qkl1zRUBxjfYEObx2UdM8GyDwIRLj.jpg"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#e5e5e5",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d87d27938c9b772a8c3cf01ede77d531-pgLK8cWnQB1OdbYlgXMsyVMTiRZmoa.jpg"
+        },
+        {
+          "nombre": "Lila",
+          "hex": "#9089b0",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1a8f3f6750f12b7393ff9e913c4bde0b-X9s6gDJ7mufR1lCz4vs22nX8gREovZ.jpg"
+        }
+      ]
+    },
+    {
+      "id": "b37",
+      "nombre": "Adidas Copa Mundial",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d8e0ca9c35e1040d1ccbace44dda7f57-gPTyoTkkIjog725cwr6IZQ8JDLeXmn.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Negro",
+          "hex": "#434244",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d8e0ca9c35e1040d1ccbace44dda7f57-gPTyoTkkIjog725cwr6IZQ8JDLeXmn.jpg"
+        },
+        {
+          "nombre": "Celeste",
+          "hex": "#348e9e",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d34cadcb40ca99114a89c70270c0df71-7ZpYLDtE9TjbDBi7D8fHcmFP1XLp3U.jpg"
+        },
+        {
+          "nombre": "Negro",
+          "hex": "#12151b",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/c7ee75879d3d3bc16b0c49ce76956b7c-tZp8aEtIj5KmHS0J7zDuOkiHLHENvD.jpg"
+        }
+      ]
+    },
+    {
+      "id": "b38",
+      "nombre": "Nike T90",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/391d2b9d369fbf2b2634e21369faf6e3-EZ3k06elGblCAxh5mn0Jha100C7Kwu.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b39",
+      "nombre": "Nike React Gato",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/bbf1ddfc974bfefef637aa86d4a7cb0b-LSRFHgVXDpn8jIRCSvNzBTyOn02Ohk.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b40",
+      "nombre": "Adidas Top Sala",
+      "cat": "Papi / Futsal",
+      "precio": 125000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/0e7bb17dac4ce4ec5d24659508097cdb-R8N0jCmlHtkwW8OlBwsF75a2482bSW.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b41",
+      "nombre": "Nike Tiempo React",
+      "cat": "Sintético (TF)",
+      "precio": 135000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/65b8e829d18d07512742b7f4936db205-4Ps4vjEyulcJueFCVKawV8RJNphGI5.jpg",
+      "top": false,
+      "nuevo": true,
+      "talles": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [
+        36,
+        38,
+        39,
+        41,
+        44
+      ],
+      "colores": [
+        {
+          "nombre": "Plateado",
+          "hex": "#8d949c",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/65b8e829d18d07512742b7f4936db205-4Ps4vjEyulcJueFCVKawV8RJNphGI5.jpg"
+        },
+        {
+          "nombre": "Bronce",
+          "hex": "#875b61",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779224510997-64474e75131b297130fdaf29_display-OJPGIBewDAqHWzCkai5QvZWBuSvkpa.webp"
+        }
+      ],
+      "desc": "Botines de calidad premium. Convertite en leyenda"
+    },
+    {
+      "id": "b42",
+      "nombre": "Nike Tiempo Emerald",
+      "cat": "Sintético (TF)",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/684e7e3bb0291431db72e1096870cbd8-lEAWknpjS4VnFTxYu5rJvRIndBTzPt.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [
+        38,
+        39,
+        41,
+        45
+      ],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#e3e3e3",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/684e7e3bb0291431db72e1096870cbd8-lEAWknpjS4VnFTxYu5rJvRIndBTzPt.jpg"
+        },
+        {
+          "nombre": "Esmeralda",
+          "hex": "#447772",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1c012751bd951b7e667ac5fd18f86961-ubBSjPJuov89FPjc5Dmsn6qeMlLrQQ.jpg"
+        }
+      ],
+      "desc": "Grip interno, evitan que el pie se mueva dentro del botín."
+    },
+    {
+      "id": "b43",
+      "nombre": "Nike Mercurial Air Zoom",
+      "cat": "Sintético",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/001c057501e0afe06235c8b96d0a81f5-7rADLiJqBOdI0ungeTrgIDRrAfoAHr.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#e5e6e4",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/001c057501e0afe06235c8b96d0a81f5-7rADLiJqBOdI0ungeTrgIDRrAfoAHr.jpg"
+        },
+        {
+          "nombre": "Salmón",
+          "hex": "#e99974",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914019121-2fc722e86f625dff338cc3bf_display-uS8mRNiC3onXrhVwXhYZucKDyMxfYL.webp"
+        }
+      ]
+    },
+    {
+      "id": "b44",
+      "nombre": "Adidas Copa Mundial",
+      "cat": "Sintético",
+      "precio": 155000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/a658e850eef5d01d483c089cc12649d6-8HhbdkbgGcFIGNg2Bidsll80mYHOxk.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b45",
+      "nombre": "Nike Mercurial Air Zoom",
+      "cat": "Sintético",
+      "precio": 155000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1f0dbaed8f0f78b11980a0a71241f5c5-PnEc33uRx6MkRMvUhuI6ISvzPpxH8U.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b46",
+      "nombre": "Nike Tiempo React PRO",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/dedfa5a4f03d86c3fa65d0d78970b386-aGJHahSM8ThofaekFemz3ttOCC2a7D.jpg",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b47",
+      "nombre": "Joma Top Flex Rebound",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779139491816-6699144fd15e26f3d7a8537e_display-QMz55YGsZRL9NHJouhFTTl4IO6P5Ml.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco / Azul",
+          "hex": "#cecece",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779139491816-6699144fd15e26f3d7a8537e_display-QMz55YGsZRL9NHJouhFTTl4IO6P5Ml.webp"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#e1deda",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779141760402-e77a8c67b1c828de38e0fd94_display-uplG6WqBa5huL6XhJmxbK1eU0gF0eI.webp"
+        },
+        {
+          "nombre": "Plateado",
+          "hex": "#8d949c",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1780344059226-c501a54bfdddd05c672502af_display-mkHCwxQgSPEIGcWVnE1uF6epQZLg7o.webp"
+        },
+        {
+          "nombre": "Blanco / Verde",
+          "hex": "#d6d1c5",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902277041-3340d10cd0d5a32c8f0e3edd_display-tUGGPV91OdGoLf43Oa1qMfT7gP9hRj.webp"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#e7e7e7",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792774080-e5e0d8f48c243284a0a3ea50_display-ncgNQZtdN6b0Oby52J9S1tiPIw2Ar7.webp"
+        }
+      ]
+    },
+    {
+      "id": "b48",
+      "nombre": "Joma Top Flex",
+      "cat": "Papi / Futsal",
+      "precio": 139000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779141671404-0e655ac274e49a583396d857_display-a3mQOJYw0gv8sr0sDo9iHT0OO3BkPY.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Negro",
+          "hex": "#141414",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779141671404-0e655ac274e49a583396d857_display-a3mQOJYw0gv8sr0sDo9iHT0OO3BkPY.webp"
+        },
+        {
+          "nombre": "Negro",
+          "hex": "#12151b",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786910878769-d6960f52ac9b71255393956d_display-vZrtXfFttP9PgnOtXbHu3jOe7Az6fE.webp"
+        }
+      ]
+    },
+    {
+      "id": "b49",
+      "nombre": "Adidas Predator ELITE",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223498428-ce3d3e99be1a4db7aba9187f_display-BLcFE3bxgJwH8GsAX0uDyAr7GFWa9G.webp",
+      "top": true,
+      "nuevo": true,
+      "talles": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Negro",
+          "hex": "#111111",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223498428-ce3d3e99be1a4db7aba9187f_display-BLcFE3bxgJwH8GsAX0uDyAr7GFWa9G.webp"
+        },
+        {
+          "nombre": "Blanco / Verde",
+          "hex": [
+            "#f2f2f2",
+            "#576930"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786908873569-c8601f637365b23c0fcdb657_display-nXHSi2lc9Eth5bpUiZU1HxuKATp7ZT.webp"
+        }
+      ],
+      "desc": "Sin cordones, calce tipo media. Toque limpio."
+    },
+    {
+      "id": "b50",
+      "nombre": "Nike Mercurial Air Zoom FLYKNIT",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223663310-1b8ee15c6e97bbc87d8458f5_display-HGBLeyfgNbhBGZaSR00PHsDyXAKAsZ.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b51",
+      "nombre": "Nike Phantom GX",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223858050-6122970936427f6c810c2c87_display-iYVCibZ03nyx0zznA6ysi7RNCpGOMJ.webp",
+      "top": false,
+      "nuevo": true,
+      "talles": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "sinStock": [
+        37,
+        41,
+        43,
+        44,
+        45
+      ],
+      "desc": "Mayor estabilidad y potencia para cancha de césped natural."
+    },
+    {
+      "id": "b52",
+      "nombre": "Nike Street Gato",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893203232-c1f9e3cfc79cfcfbf68d7891_display-zXmTpx0EPWSfelS6nobZRalePuLyt3.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b53",
+      "nombre": "Nike Gato SB",
+      "cat": "Papi / Futsal",
+      "precio": 155000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1780356718259-45c7c5c0a5a3bfea097e8f53_display-FZUCsYoOtUcYHb01lw8zKjycrcaZQT.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#e2e2e2",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1780356718259-45c7c5c0a5a3bfea097e8f53_display-FZUCsYoOtUcYHb01lw8zKjycrcaZQT.webp"
+        },
+        {
+          "nombre": "Azul / Amarillo",
+          "hex": "#1860c4",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1789249960010-e431c271e30a2644acfe8f43_display-D9rmXlHpyXTHVXo6uJh14xgVX0hAjI.webp"
+        }
+      ]
+    },
+    {
+      "id": "b54",
+      "nombre": "Joma Top Flex",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902129641-879393148b39eb38a3fbab11_display-asKHpSDpL7FunQkYaxorwdFCcDILLt.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#ffffff",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902129641-879393148b39eb38a3fbab11_display-asKHpSDpL7FunQkYaxorwdFCcDILLt.webp"
+        },
+        {
+          "nombre": "Blanco / Gris",
+          "hex": "#c7c7c7",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787154953070-2ac8d0c07e476b94b30d9c26_display-3FpheUqfzFN5PRC3jfUWSZmn5EXPJo.webp"
+        }
+      ]
+    },
+    {
+      "id": "b55",
+      "nombre": "Nike Sala Premier",
+      "cat": "Papi / Futsal",
+      "precio": 115000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902547320-d9fd81895e7ee070d0b366ad_display-3CtEzNrTWqnMXn1FyI2qfsflcQL31J.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b56",
+      "nombre": "Nike Tiempo X",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902660524-345e1db0d82166ca8734aa82_display-Qs8gu8SstSWjheCUriglcS4fISveDl.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "sinStock": [
+        38,
+        39,
+        41,
+        42,
+        43
+      ],
+      "desc": "Liviano y cómodo para jugar todos los días."
+    },
+    {
+      "id": "b57",
+      "nombre": "Nike T90 Negro",
+      "cat": "Papi / Futsal",
+      "precio": 129000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786911245857-1d2bb14061e310600ed59cce_display-J6ExVp7QMA41UJSYy476vcWr7msfTB.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b58",
+      "nombre": "Nike Phantom ELITE",
+      "cat": "Campo (FG)",
+      "precio": 149000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914439996-2111071c99fc20275adc8ba8_display-TpLLOtpFfVFUzfLZfvlVygX0hRaQvZ.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Gris",
+          "hex": "#8d949c",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914439996-2111071c99fc20275adc8ba8_display-TpLLOtpFfVFUzfLZfvlVygX0hRaQvZ.webp"
+        },
+        {
+          "nombre": "Fuxia",
+          "hex": "#ef5669",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914511118-5f64a35b1d247ab94fc4202f_display-AQbM2s1hkiyn3ucV7u8W2joAXdgQep.webp"
+        }
+      ]
+    },
+    {
+      "id": "b59",
+      "nombre": "Joma Regate Rebound",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787155303014-ee9537e59381a61f87870af9_display-cOKiLBdwsggScD9sFmAOXxKkr5gYei.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#e3e3e3",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787155303014-ee9537e59381a61f87870af9_display-cOKiLBdwsggScD9sFmAOXxKkr5gYei.webp"
+        },
+        {
+          "nombre": "Negro",
+          "hex": "#292929",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787155321449-8854a63cb8361ec9231e7e6d_display-EeI6nXmo4MCGwAn1KUnTgqwu3lkHb2.webp"
+        }
+      ]
+    },
+    {
+      "id": "b60",
+      "nombre": "Joma Top Flex Plus",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791230023-c9092416c621cc909ea4400e_display-HxLphoX6tmmJkEIP5QZXFm9TVrDdFe.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco / Rosa",
+          "hex": "#d9d9d9",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791230023-c9092416c621cc909ea4400e_display-HxLphoX6tmmJkEIP5QZXFm9TVrDdFe.webp"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#dedede",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791287220-407cfac0af27e5d242f0e8f9_display-RzTWDaoLDNSYbJz5KKDnNCqN78Xzk9.webp"
+        }
+      ]
+    },
+    {
+      "id": "b61",
+      "nombre": "Nike Tiempo JOGA Bonito",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791333859-a214d36d7fd629552cb36af0_display-xsyRMM5RQSDBlnBNlJyVielUMNBfUV.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b62",
+      "nombre": "Nike Phantom GX 6 ELITE",
+      "cat": "Campo (FG)",
+      "precio": 190000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791579158-c689753fb4ba95eab6843072_display-4wBiDu0krd0pUZXY3nQZbTqNVvSLR3.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Púrpura",
+          "hex": "#3637ac",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791579158-c689753fb4ba95eab6843072_display-4wBiDu0krd0pUZXY3nQZbTqNVvSLR3.webp"
+        },
+        {
+          "nombre": "Negro",
+          "hex": "#0a0a0a",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791685857-bd8a83afa41c7b9af7c146e9_display-bGNdk1ylbiH87pzk87rdx8NTHJuFzb.webp"
+        },
+        {
+          "nombre": "Blanco",
+          "hex": "#f0f0f0",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791796496-e67966090d7608f67712496f_display-QXoqnMswasBiMR7eBTAjUZ2rPlPVAq.webp"
+        }
+      ]
+    },
+    {
+      "id": "b63",
+      "nombre": "Nike Phantom GX 6 ELITE MAMBA",
+      "cat": "Campo (FG)",
+      "precio": 190000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791766374-4f5ec59d4bff41984b261e2f_display-71yi2kbrqGUkSB8zcxU5GgU4rGIZPK.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b64",
+      "nombre": "Adidas F50 ELITE Intercambiables",
+      "cat": "Campo (FG)",
+      "precio": 190000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791838912-4a1fa08703dc39dd421c1159_display-E46wiLGZQcq5M4ga4FC3xXlg3ZMudA.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco",
+          "hex": "#e6e6e6",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791838912-4a1fa08703dc39dd421c1159_display-E46wiLGZQcq5M4ga4FC3xXlg3ZMudA.webp"
+        },
+        {
+          "nombre": "Negro",
+          "hex": "#050505",
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791873460-aa3bd766f09d0f9c09e069f8_display-RIlaU9hjm2amkUyp9dWBx3oNHS7EDe.webp"
+        }
+      ]
+    },
+    {
+      "id": "b65",
+      "nombre": "Nike Tiempo Ronaldinho",
+      "cat": "Papi / Futsal",
+      "precio": 190000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792618584-090de6d0cb4f2b384652ef69_display-wFZLbddiDkTOwb2Ot0BA4axYgiQzVI.webp",
+      "top": true,
+      "nuevo": true,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": [],
+      "colores": [
+        {
+          "nombre": "Blanco / Dorado",
+          "hex": [
+            "#fafafa",
+            "#ffcc00"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792618584-090de6d0cb4f2b384652ef69_display-wFZLbddiDkTOwb2Ot0BA4axYgiQzVI.webp"
+        },
+        {
+          "nombre": "Negro / Dorado",
+          "hex": [
+            "#08080a",
+            "#ffcc00"
+          ],
+          "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792646347-b0f2d39ff1ec9e0082620b7c_display-vuPcBDhrIeOmDUXJwLsczgfOPI4pkt.webp"
+        }
+      ],
+      "desc": "Multitaco de gran agarre para césped sintético."
+    },
+    {
+      "id": "b66",
+      "nombre": "Nike Tiempo X Lunarloon",
+      "cat": "Papi / Futsal",
+      "precio": 145000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792730323-e981c193eb483b12b350b560_display-cmY0h3c9nvw5fdkScC83eFd0OS3LLY.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b67",
+      "nombre": "Joma Regate",
+      "cat": "Papi / Futsal",
+      "precio": 165000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792817940-3c1f177182fcd3cb79890cce_display-9XsJqMHBobkFPiGtNSO7riZqmmoUlB.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    },
+    {
+      "id": "b68",
+      "nombre": "Nike Tiempo Ronaldinho Sintético",
+      "cat": "Sintético (TF)",
+      "precio": 180000,
+      "img": "https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792948221-abb1a949ede451eaa2c4b17b_display-UnupznANK6SILD1iEkmHNeXokRT24b.webp",
+      "top": false,
+      "nuevo": false,
+      "talles": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "sinStock": []
+    }
+  ],
+  "zonas": [
+    {
+      "nombre": "CABA",
+      "costo": 8500
+    },
+    {
+      "nombre": "Zona Norte",
+      "costo": 8500
+    },
+    {
+      "nombre": "Zona Sur",
+      "costo": 8500
+    },
+    {
+      "nombre": "Zona Oeste",
+      "costo": 8500
+    },
+    {
+      "nombre": "La Plata",
+      "costo": 9000
+    }
+  ],
+  "promos": [
+    {
+      "texto": "Llevá 2 pares",
+      "off": 10
+    },
+    {
+      "texto": "Llevá 3 o más",
+      "off": 15
+    }
+  ]
+}

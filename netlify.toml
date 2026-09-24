@@ -1,0 +1,31 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/crear-pago"
+  to = "/.netlify/functions/crear-pago"
+  status = 200
+
+[[redirects]]
+  from = "/api/estado-pago"
+  to = "/.netlify/functions/estado-pago"
+  status = 200
+
+[[redirects]]
+  from = "/api/buscar-pedido"
+  to = "/.netlify/functions/buscar-pedido"
+  status = 200
+
+[[redirects]]
+  from = "/api/stock"
+  to = "/.netlify/functions/stock"
+  status = 200
+
+[[redirects]]
+  from = "/api/guardar-pedido-efectivo"
+  to = "/.netlify/functions/guardar-pedido-efectivo"
+  status = 200
+
+[functions."sync-stock"]
+  schedule = "@hourly"

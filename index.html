@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
+<title>Botines Importados · Stock real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PALETA Y VARIABLES — cambiá los colores acá
+   ============================================================ */
+:root{
+  --bg:#08090a;
+  --bg-2:#101214;
+  --surface:#15181b;
+  --line:#24282d;
+  --txt:#f3f4f5;
+  --muted:#8d949c;
+  --volt:#ccff00;        /* acento principal */
+  --hot:#ff1d58;         /* acento promo / fuego */
+  --ok:#25d366;          /* whatsapp */
+  --radius:14px;
+  --max:1180px;
+  font-synthesis-weight:none;
+}
+:root:not([data-theme="light"]){color-scheme:dark;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--bg);color:var(--txt);
+  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.55;overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+body.lock{position:fixed;left:0;right:0;overflow:hidden;width:100%;}
+img{max-width:100%;display:block;}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit;}
+button{cursor:pointer;border:none;background:none;touch-action:manipulation;}
+a{color:inherit;text-decoration:none;touch-action:manipulation;}
+:focus-visible{outline:2px solid var(--volt);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px;}
+.display{font-family:"Archivo Black",Impact,sans-serif;letter-spacing:-.02em;line-height:.95;text-transform:uppercase;}
+
+/* ---------- BARRA SUPERIOR ---------- */
+.ticker{background:var(--volt);color:#000;font-weight:700;font-size:12.5px;text-align:center;padding:7px 12px;letter-spacing:.01em;}
+.ticker b{font-weight:800;}
+
+/* ---------- HEADER ---------- */
+header{position:sticky;top:0;z-index:60;background:rgba(8,9,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px;}
+.logo{font-family:"Archivo Black";font-size:20px;letter-spacing:-.03em;text-transform:uppercase;}
+.logo span{color:var(--volt);}
+.hdr-right{display:flex;align-items:center;gap:8px;}
+.btn-wsp{display:inline-flex;align-items:center;gap:6px;background:var(--ok);color:#04220f;font-weight:700;font-size:13px;padding:9px 13px;border-radius:99px;min-height:38px;}
+.btn-cart{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);padding:9px 13px;border-radius:99px;font-weight:700;font-size:13px;min-height:38px;}
+.btn-cart .count{background:var(--volt);color:#000;min-width:20px;height:20px;border-radius:99px;display:grid;place-items:center;font-size:12px;font-weight:800;}
+.promo-strip{background:linear-gradient(90deg,var(--hot),#8c0d33);font-size:12px;font-weight:700;text-align:center;padding:6px 12px;overflow:hidden;white-space:nowrap;}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:44px 0 36px;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background:
+   radial-gradient(60% 55% at 78% 18%,rgba(204,255,0,.16),transparent 70%),
+   radial-gradient(50% 50% at 10% 90%,rgba(255,29,88,.14),transparent 70%);pointer-events:none;}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;color:var(--volt);border:1px solid rgba(204,255,0,.35);background:rgba(204,255,0,.07);padding:5px 11px;border-radius:99px;margin-bottom:14px;}
+.hero h1{font-size:clamp(40px,7.4vw,76px);margin-bottom:12px;}
+.hero h1 em{font-style:normal;color:var(--volt);}
+.hero p.lead{color:var(--muted);font-size:16.5px;max-width:46ch;margin-bottom:18px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:7px 12px;font-size:12.5px;font-weight:600;}
+.promo-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:18px;}
+.promo-box h3{font-size:13px;font-weight:800;color:var(--hot);margin-bottom:11px;letter-spacing:.02em;}
+.promo-rows{display:grid;gap:8px;margin-bottom:10px;}
+.promo-row{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--bg-2);border-radius:10px;padding:9px 12px;font-size:13.5px;}
+.promo-row b{background:var(--volt);color:#000;padding:2px 9px;border-radius:99px;font-size:12.5px;font-weight:800;}
+.promo-box small{color:var(--muted);font-size:12px;display:block;}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--volt);color:#000;font-weight:800;font-size:15px;padding:14px 26px;border-radius:99px;box-shadow:0 10px 30px rgba(204,255,0,.18);min-height:48px;}
+.cta.ghost{background:transparent;color:var(--txt);border:1px solid var(--line);box-shadow:none;}
+.stars{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:13px;color:var(--muted);}
+.stars .s{color:var(--volt);letter-spacing:1px;}
+.stars b{color:var(--txt);}
+.hero-art{position:relative;aspect-ratio:1/1;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--bg-2);}
+.hero-art img{width:100%;height:100%;object-fit:cover;}
+.hero-tag{position:absolute;left:14px;bottom:14px;background:rgba(8,9,10,.82);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:12.5px;font-weight:700;}
+
+/* ---------- SECCIONES ---------- */
+section{padding:42px 0;}
+.sec-head{margin-bottom:20px;}
+.sec-head h2{font-size:clamp(23px,4.2vw,34px);}
+.sec-head p{color:var(--muted);font-size:14px;margin-top:5px;}
+.sec-head .kicker{font-size:12px;font-weight:800;color:var(--hot);letter-spacing:.04em;margin-bottom:6px;}
+
+/* ---------- CARRUSEL ---------- */
+.rail-wrap{position:relative;}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;}
+.rail::-webkit-scrollbar{display:none;}
+.rail>*{scroll-snap-align:start;flex:0 0 260px;}
+.rail-btn{position:absolute;top:38%;width:38px;height:38px;border-radius:99px;background:rgba(8,9,10,.85);border:1px solid var(--line);display:grid;place-items:center;font-size:18px;z-index:5;}
+.rail-btn.prev{left:-6px;}.rail-btn.next{right:-6px;}
+@media(max-width:760px){.rail-btn{display:none;}}
+
+/* ---------- CARD PRODUCTO ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;}
+.card .ph{position:relative;aspect-ratio:1/1;background:var(--bg-2);overflow:hidden;}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:opacity .2s;}
+.badges{position:absolute;top:9px;left:9px;display:flex;flex-direction:column;gap:5px;align-items:flex-start;}
+.badge{font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:99px;letter-spacing:.02em;}
+.badge.top{background:var(--volt);color:#000;}
+.badge.new{background:var(--hot);color:#fff;}
+.badge.off{background:#fff;color:#000;}
+.card-body{padding:13px;display:flex;flex-direction:column;gap:9px;flex:1;}
+.card h3{font-size:14.5px;font-weight:700;line-height:1.25;}
+.card .cat{font-size:11.5px;color:var(--muted);font-weight:600;}
+.price{display:flex;align-items:baseline;gap:8px;}
+.price .now{font-family:"Archivo Black";font-size:19px;}
+.price .was{color:var(--muted);text-decoration:line-through;font-size:13px;}
+.sizes{display:flex;flex-wrap:wrap;gap:6px;}
+.size{border:1px solid var(--line);background:var(--bg-2);border-radius:8px;padding:6px 9px;font-size:12.5px;font-weight:700;min-width:38px;min-height:36px;text-align:center;}
+.size[aria-pressed="true"]{background:var(--volt);color:#000;border-color:var(--volt);}
+.size:disabled{opacity:.28;cursor:not-allowed;text-decoration:line-through;}
+.colors{display:flex;flex-wrap:wrap;align-items:center;gap:2px 4px;}
+.colors .clbl{flex:0 0 100%;font-size:12px;color:var(--muted);font-weight:600;}
+.colors .clbl b{color:var(--txt);font-weight:700;}
+.swatch{width:34px;height:34px;border-radius:50%;border:2px solid transparent;display:grid;place-items:center;padding:0;}
+.swatch i{display:block;width:22px;height:22px;border-radius:50%;background:var(--c);border:1px solid rgba(255,255,255,.3);}
+.swatch[aria-pressed="true"]{border-color:var(--volt);}
+.add{margin-top:auto;background:var(--volt);color:#000;font-weight:800;font-size:13.5px;padding:12px;border-radius:10px;width:100%;min-height:44px;}
+.add.added{background:var(--ok);color:#04220f;}
+
+/* ---------- GALERÍA ---------- */
+.gal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;}
+.gal::-webkit-scrollbar{display:none;}
+.gal figure{flex:0 0 210px;scroll-snap-align:start;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:3/4;background:var(--bg-2);}
+.gal img{width:100%;height:100%;object-fit:cover;}
+
+/* ---------- BUSCADOR ---------- */
+.search{position:relative;margin-bottom:14px;scroll-margin-top:110px;}
+.search .ico{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none;}
+.search input{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:0 48px 0 46px;min-height:50px;font-size:16px;color:var(--txt);outline:0;-webkit-appearance:none;appearance:none;}
+.search input::placeholder{color:var(--muted);}
+.search input::-webkit-search-cancel-button,.search input::-webkit-search-decoration{-webkit-appearance:none;display:none;}
+.search input:focus{border-color:var(--volt);box-shadow:0 0 0 3px rgba(204,255,0,.14);}
+.search.on input{border-color:var(--volt);}
+.search .clr{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);display:none;place-items:center;font-size:13px;line-height:1;}
+.search.on .clr{display:grid;}
+
+/* ---------- FILTROS ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px;}
+.filters .lbl{font-size:12.5px;color:var(--muted);font-weight:600;margin-right:2px;}
+.fbtn{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:8px 14px;font-size:13px;font-weight:700;min-height:38px;}
+.fbtn[aria-pressed="true"]{background:var(--txt);color:#000;border-color:var(--txt);}
+.filters .tools{flex:0 0 100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+.tools .sel{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:0 6px 0 14px;min-height:38px;}
+.tools .sel:focus-within{outline:2px solid var(--volt);outline-offset:2px;}
+.tools .sel.on{border-color:var(--volt);}
+.tools .sel span{font-size:12.5px;color:var(--muted);font-weight:600;}
+.tools .sel select{-webkit-appearance:none;appearance:none;background-color:transparent;border:0;outline:0;color:var(--txt);font-weight:700;font-size:13px;min-height:36px;padding:0 24px 0 2px;cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9'><path d='M1 1l6 6 6-6' stroke='%238d949c' stroke-width='1.6' fill='none'/></svg>");background-repeat:no-repeat;background-position:right 6px center;}
+.tools .sel select option{background:var(--bg-2);color:var(--txt);}
+.tools .count{font-size:12.5px;color:var(--muted);font-weight:600;margin-left:2px;}
+.tools .size-guide{margin-left:auto;}
+.clear-filters{margin-top:10px;}
+@media(max-width:760px){.tools .sel select{font-size:16px;}}
+.fbtn.size-guide{background:transparent;color:var(--volt);border-color:rgba(204,255,0,.4);}
+
+/* ---------- TRUST ---------- */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;}
+.trust div{text-align:center;}
+.trust .ico{font-size:22px;display:block;margin-bottom:4px;}
+.trust b{font-size:13.5px;}
+
+/* ---------- FOOTER ---------- */
+footer{padding:38px 0 30px;color:var(--muted);font-size:13px;}
+footer .flogo{font-family:"Archivo Black";font-size:17px;color:var(--txt);text-transform:uppercase;}
+footer .tagline{margin:4px 0 18px;}
+.flinks{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;}
+.flinks button{background:var(--surface);text-align:left;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--txt);font-weight:600;min-height:48px;}
+.flinks button span.arrow{color:var(--muted);}
+footer .fine{border-top:1px solid var(--line);padding-top:14px;font-size:12px;}
+
+/* ---------- ZOOM DE PRODUCTOS ---------- */
+.product-zoom{position:fixed;inset:0;z-index:250;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.88);backdrop-filter:blur(6px);cursor:zoom-out;}
+.product-zoom.open{display:flex;}
+.product-zoom img{max-width:min(94vw,1100px);max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 20px 70px rgba(0,0,0,.65);cursor:default;}
+.product-zoom-close{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(21,24,27,.92);border:1px solid var(--line);color:var(--txt);font-size:24px;z-index:2;}
+.card .ph{cursor:zoom-in;}
+
+/* ---------- MODALES ---------- */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(3px);z-index:80;display:none;overscroll-behavior:contain;}
+.overlay.open{display:block;}
+.modal{position:fixed;z-index:90;left:50%;top:50%;transform:translate(-50%,-50%);width:min(620px,94vw);max-height:86vh;overflow-y:auto;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:22px;display:none;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
+.modal.open{display:block;}
+.modal h3{font-family:"Archivo Black";font-size:19px;text-transform:uppercase;margin-bottom:14px;padding-right:34px;}
+.modal h4{font-size:14px;margin:16px 0 5px;color:var(--volt);}
+.modal p,.modal li{font-size:14px;color:#cfd3d7;}
+.modal ol,.modal ul{padding-left:18px;}
+.modal li{margin:4px 0;}
+.x{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:99px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font-size:15px;}
+.pill-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.pill{background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-size:12px;}
+.stat-row{display:flex;gap:12px;margin-top:10px;}
+.stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;}
+.stat b{display:block;font-family:"Archivo Black";font-size:20px;color:var(--volt);}
+.stat small{font-size:11.5px;color:var(--muted);}
+table.tallas{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px;}
+table.tallas th,table.tallas td{border:1px solid var(--line);padding:8px;text-align:center;}
+table.tallas th{background:var(--surface);font-size:12px;color:var(--volt);}
+.note{color:var(--muted);font-size:12px;margin-top:8px;}
+
+/* ---------- CARRITO ---------- */
+.drawer{
+  position:fixed;top:0;right:0;
+  height:100vh;height:100dvh;
+  width:min(430px,100vw);
+  background:var(--bg-2);border-left:1px solid var(--line);z-index:95;
+  transform:translateX(102%);transition:transform .28s ease;
+  display:flex;flex-direction:column;
+  overscroll-behavior:contain;
+}
+.drawer.open{transform:none;}
+.drawer-top{padding:calc(14px + env(safe-area-inset-top)) 16px 14px;border-bottom:1px solid var(--line);flex-shrink:0;}
+.drawer-top .row{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.drawer-top h3{font-family:"Archivo Black";font-size:18px;text-transform:uppercase;}
+.steps{display:flex;gap:6px;margin-top:12px;}
+.step{flex:1;font-size:11px;font-weight:700;text-align:center;padding:7px 4px;border-radius:8px;background:var(--surface);color:var(--muted);border:1px solid var(--line);}
+.step.on{background:var(--volt);color:#000;border-color:var(--volt);}
+.drawer-body{flex:1;overflow-y:auto;padding:16px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;min-height:0;}
+.drawer-foot{padding:14px 16px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--bg-2);flex-shrink:0;}
+.ci{display:flex;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:10px;}
+.ci img{width:62px;height:62px;border-radius:9px;object-fit:cover;background:var(--bg-2);flex-shrink:0;}
+.ci .info{flex:1;min-width:0;}
+.ci h4{font-size:13.5px;font-weight:700;}
+.ci small{color:var(--muted);font-size:12px;}
+.qty{display:flex;align-items:center;gap:10px;margin-top:7px;}
+.qty button{width:32px;height:32px;border-radius:8px;background:var(--bg-2);border:1px solid var(--line);font-weight:800;font-size:15px;display:grid;place-items:center;}
+.qty span{font-size:13.5px;font-weight:700;min-width:18px;text-align:center;}
+.ci .rm{color:var(--muted);font-size:12px;text-decoration:underline;margin-top:6px;display:inline-block;padding:4px 0;}
+.empty{text-align:center;padding:46px 10px;color:var(--muted);}
+.empty .big{font-size:40px;display:block;margin-bottom:10px;}
+.nudge{background:rgba(255,29,88,.1);border:1px solid rgba(255,29,88,.35);border-radius:12px;padding:12px;font-size:13px;margin-bottom:12px;}
+.nudge b{color:var(--hot);display:block;font-size:12px;margin-bottom:3px;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:5px;}
+.field input,.field select,.field textarea{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:16px;min-height:46px;}
+.field textarea{min-height:70px;resize:vertical;}
+.field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9'><path d='M1 1l6 6 6-6' stroke='%238d949c' stroke-width='1.6' fill='none'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:34px;}
+.field .err{color:var(--hot);font-size:11.5px;display:none;margin-top:4px;}
+.field.bad input,.field.bad select{border-color:var(--hot);}
+.field.bad .err{display:block;}
+.totals{font-size:13.5px;margin-bottom:10px;}
+.totals .r{display:flex;justify-content:space-between;padding:3px 0;}
+.totals .r.sum{border-top:1px solid var(--line);margin-top:6px;padding-top:8px;font-size:17px;font-weight:800;font-family:"Archivo Black";}
+.totals .disc{color:var(--volt);}
+.wbtn{width:100%;background:var(--ok);color:#04220f;font-weight:800;font-size:15px;padding:15px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;}
+.wbtn:disabled{opacity:.55;}
+.wbtn.alt{background:transparent;color:var(--ok);border:1px solid rgba(37,211,102,.45);font-size:14px;padding:11px;min-height:44px;margin-top:8px;}
+.mpbtn{width:100%;background:#009ee3;color:#fff;font-weight:800;font-size:15px;padding:15px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;}
+.mpbtn:disabled{opacity:.65;}
+.pay-err{color:#ff6b8a;font-size:12.5px;font-weight:600;text-align:center;margin-bottom:8px;}
+.pay-err:empty{display:none;}
+.lbtn{width:100%;background:var(--volt);color:#000;font-weight:800;font-size:15px;padding:15px;border-radius:12px;min-height:50px;}
+.tbtn{width:100%;background:transparent;color:var(--muted);font-size:13px;padding:12px;min-height:40px;}
+.secure{text-align:center;font-size:11.5px;color:var(--muted);margin-top:9px;}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,120%);background:var(--volt);color:#000;font-weight:800;font-size:13.5px;padding:12px 20px;border-radius:99px;z-index:200;transition:transform .3s;box-shadow:0 12px 30px rgba(0,0,0,.5);max-width:90vw;text-align:center;}
+.toast.show{transform:translate(-50%,0);}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:24px;}
+  .hero-art{order:-1;aspect-ratio:4/3;}
+  .trust{grid-template-columns:1fr;text-align:left;}
+  .trust div{display:flex;align-items:center;gap:10px;text-align:left;}
+  .trust .ico{margin:0;font-size:19px;}
+}
+@media(max-width:560px){
+  .hdr{height:56px;}
+  .btn-wsp span.t{display:none;}
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .card-body{padding:10px;gap:7px;}
+  .card h3{font-size:13px;}
+  .price .now{font-size:16px;}
+  .size{padding:5px 7px;font-size:11.5px;min-width:34px;min-height:34px;}
+  .add{font-size:12.5px;padding:11px;}
+  .rail>*{flex:0 0 205px;}
+  section{padding:32px 0;}
+  .drawer{width:100vw;}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" id="ticker"></div>
+
+<header>
+  <div class="wrap hdr">
+    <div class="logo" id="logoTxt"></div>
+    <div class="hdr-right">
+      <a class="btn-wsp" id="wspTop" target="_blank" rel="noopener">💬 <span class="t">Contacto</span></a>
+      <button class="btn-cart" id="searchBtn" aria-label="Buscar productos">🔍</button>
+      <button class="btn-cart" id="cartBtn">🛒 <span class="count" id="cartCount">0</span></button>
+    </div>
+  </div>
+  <div class="promo-strip" id="promoStrip"></div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow" id="heroEyebrow"></div>
+      <h1 class="display" id="heroTitle"></h1>
+      <p class="lead" id="heroLead"></p>
+      <div class="chips" id="heroChips"></div>
+      <div class="promo-box">
+        <h3 id="promoTitle"></h3>
+        <div class="promo-rows" id="promoRows"></div>
+        <small id="promoNote"></small>
+      </div>
+      <a href="#catalogo" class="cta" id="heroCta"></a>
+      <div class="stars"><span class="s">★★★★★</span> <b id="ratingVal"></b> <span id="ratingTxt"></span></div>
+    </div>
+    <div class="hero-art">
+      <img id="heroImg" alt="Botines destacados">
+      <div class="hero-tag" id="heroTag"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MÁS VENDIDOS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" id="railKicker"></div>
+      <h2 class="display" id="railTitle"></h2>
+      <p id="railSub"></p>
+    </div>
+    <div class="rail-wrap">
+      <button class="rail-btn prev" id="railPrev" aria-label="Anterior">‹</button>
+      <div class="rail" id="rail"></div>
+      <button class="rail-btn next" id="railNext" aria-label="Siguiente">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="display" id="galTitle"></h2>
+      <p id="galSub"></p>
+    </div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<!-- ============ CATÁLOGO ============ -->
+<section id="catalogo">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="display" id="catTitle"></h2>
+      <p id="catSub"></p>
+    </div>
+    <div class="search" id="searchBox" role="search">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="busq" type="search" placeholder="Buscar botín, marca o color…" aria-label="Buscar productos" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+      <button class="clr" id="busqClr" type="button" aria-label="Borrar búsqueda">✕</button>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<div class="wrap"><div class="trust" id="trust"></div></div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="flogo" id="footLogo"></div>
+    <div class="tagline" id="footTag"></div>
+    <div class="flinks" id="flinks"></div>
+    <div class="fine" id="footFine"></div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- MODAL INFO -->
+<div class="modal" id="infoModal" role="dialog" aria-modal="true">
+  <button class="x" data-close aria-label="Cerrar">✕</button>
+  <h3 id="infoTitle"></h3>
+  <div id="infoBody"></div>
+</div>
+
+<!-- MODAL TALLES -->
+<div class="modal" id="sizeModal" role="dialog" aria-modal="true">
+  <button class="x" data-close aria-label="Cerrar">✕</button>
+  <h3>📏 Guía de talles</h3>
+  <p style="font-size:13px;color:var(--muted)">Medí tu pie apoyado contra la pared, del talón al dedo más largo.</p>
+  <table class="tallas"><thead><tr><th>ARG</th><th>EU</th><th>US</th><th>Pie (cm)</th></tr></thead><tbody id="sizeTable"></tbody></table>
+  <p class="note" id="sizeNote"></p>
+</div>
+
+<!-- CARRITO -->
+<aside class="drawer" id="drawer" aria-label="Tu pedido" role="dialog" aria-modal="true">
+  <div class="drawer-top">
+    <div class="row"><h3>Tu pedido</h3><button class="x" style="position:static" data-close aria-label="Cerrar">✕</button></div>
+    <div class="steps">
+      <div class="step on" data-step="1">1 · Carrito</div>
+      <div class="step" data-step="2">2 · Datos</div>
+      <div class="step" data-step="3">3 · Listo</div>
+    </div>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<!-- Visor ampliado de imágenes de productos -->
+<div class="product-zoom" id="productZoom" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button class="product-zoom-close" id="productZoomClose" aria-label="Cerrar imagen">×</button>
+  <img id="productZoomImg" alt="Imagen ampliada del producto">
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ==================================================================
+   ⚙️  CONFIGURACIÓN — TODO LO EDITABLE ESTÁ ACÁ ABAJO
+   ==================================================================
+   · Para cambiar una foto: reemplazá el texto de "img" por la URL de
+     tu imagen (ej: "https://misitio.com/botin1.jpg"). Si lo dejás
+     vacío ("") se dibuja una imagen de reemplazo automática.
+   · Para agregar un producto: copiá un bloque { ... } completo y
+     pegalo dentro de la lista, con un id distinto.
+   · COLORES (opcional, solo en los productos que lo necesiten):
+     agregá una línea colores:[ ... ] al producto. Cada color lleva:
+       nombre:"Negro"                 → texto que ve el cliente
+       hex:"#111111"                  → color de la muestra
+       hex:["#111111","#ccff00"]      → muestra bicolor (mitad y mitad)
+       img:"https://..."              → foto de ese color (la tarjeta la muestra al elegirlo)
+     Sin foto de color se ve la foto principal del producto; si tampoco hay,
+     la imagen de reemplazo se pinta con el color elegido.
+     Si un producto no tiene la línea "colores", no muestra selector.
+     Si tiene un solo color, viene elegido de entrada.
+   · TALLES SEGÚN EL COLOR (opcional): al elegir un color, los talles se
+     actualizan solos. Dentro de cada color podés agregar:
+       sinStock:[42,43]   → talles AGOTADOS en ese color (los demás quedan disponibles)
+       talles:[40,41,42]  → talles que EXISTEN en ese color (el resto se ve agotado)
+     Ejemplo:
+       colores:[
+         {nombre:"Negro",  hex:"#111111", img:"", sinStock:[38,44]},
+         {nombre:"Blanco", hex:"#f2f2f2", img:"", talles:[40,41,42,43]}
+       ]
+     Si un color no lleva ninguna de las dos, usa el "sinStock" general del producto.
+     Los talles del producto ("talles") son la lista completa del modelo.
+     Mientras no se elige color, un talle se ve disponible si hay stock en algún color.
+   ================================================================== */
+const CONFIG = {
+
+  /* ---------- MARCA Y CONTACTO ---------- */
+  marca:        "BOOT.",         // primera parte del logo
+  marcaAccento: "ARG",           // segunda parte (se pinta de color)
+  whatsapp:     "541140737545",  // ← TU número: código país + número, sin + ni espacios
+  moneda:       "$",
+
+  /* ---------- FORMAS DE PAGO ---------- */
+  pagoMercadoPago: true,                // botón "Pagar con Mercado Pago" al finalizar el pedido
+  pagoWhatsApp:    true,                // botón de WhatsApp (efectivo al recibir). Ponelo en false para cobrar solo online
+  endpointPago:    "/api/crear-pago",   // función que crea el pago (carpeta api/)
+  endpointEstado:  "/api/estado-pago",  // función que verifica el pago cuando el cliente vuelve de Mercado Pago
+  endpointPedidoEfectivo: "/api/guardar-pedido-efectivo", // guarda el pedido de WhatsApp/efectivo (misma búsqueda que Mercado Pago)
+
+  /* ---------- STOCK Y PRODUCTOS AUTOMÁTICOS DEL PROVEEDOR ---------- */
+  sincronizarStock:  true,   // true = pisa los talles con el stock real del proveedor al cargar la página
+  publicarNuevos:    true,   // true = agrega solo productos nuevos del proveedor (precio: costo +20%, categoría adivinada por el nombre)
+  endpointStock:     "/api/stock",  // función que devuelve el stock y los productos nuevos ya sincronizados
+
+  /* ---------- BARRAS SUPERIORES ---------- */
+  ticker:     "El pedido se confirma por WhatsApp · Hasta 3 cuotas sin interés · 100% seguro",
+  promoStrip: "🔥 PROMOS ACTIVAS · 2 PARES = 10% OFF · 3 PARES = 15% OFF",
+
+  /* ---------- HERO ---------- */
+  heroEyebrow: "🔥 Drop de la semana",
+  heroTitle:   "Botines<br><em>que definen</em>",
+  heroLead:    "Los modelos más pedidos del mes. Stock real, talles del 37 al 45 y entrega en 24hs.",
+  heroChips:   ["🚚 Entrega en 48hs","💵 Hasta 3 y 6 cuotas","🔄 Cambio de talle"],
+  heroImg:     "https://i.ibb.co/prnsV9H4/1779893159186-92139caf7cab60c0bdab23f0-display-Ig-KY94-B0-Ek-Rk-W2-LA9ctdaa-AWvr-Azbn.webp",               // ← foto principal
+  heroTag:     "⚡ Última tanda importada",
+  heroCta:     "Ver el catálogo 🔥",
+  rating:      "4.8",
+  ratingTxt:   "· +1.000 clientes",
+
+  /* ---------- PROMOS POR CANTIDAD ---------- */
+  promoTitle: "🔥 Promos activas",
+  promos: [
+    { texto:"Llevá 2 pares",  off:10 },
+    { texto:"Llevá 3 o más",  off:15 }
+  ],
+  promoNote: "Podés combinar modelos, colores y talles. El descuento se aplica solo en el carrito.",
+
+  /* ---------- TÍTULOS DE SECCIONES ---------- */
+  railKicker: "Los que están volando",
+  railTitle:  "🔥 Los más vendidos",
+  railSub:    "Stock limitado · Se reponen cada 15 días",
+  galTitle:   "📱 Mirá cómo quedan",
+  galSub:     "Fotos reales de clientes · deslizá →",
+  catTitle:   "🛍️ Todos los botines",
+  catSub:     "Elegí modelo y talle · Stock actualizado a diario",
+
+  /* ---------- GALERÍA (fotos de clientes) ---------- */
+  galeria: ["","","","","",""],   // ← pegá acá las URLs de tus fotos
+
+  /* ---------- ENVÍOS ---------- */
+  zonas: [
+    { nombre:"CABA",        costo:8500 },
+    { nombre:"Zona Norte",  costo:8500 },
+    { nombre:"Zona Sur",    costo:8500 },
+    { nombre:"Zona Oeste",  costo:8500 },
+    { nombre:"La Plata",    costo:9000 }
+  ],
+
+  /* ---------- CATEGORÍAS (rubros) ---------- */
+  categorias: ["Campo (FG)","Papi / Futsal","Sintético (TF)"],
+
+  /* ---------- ORDEN Y FILTRO POR PRECIO ---------- */
+  // Cómo arranca el catálogo: "original" | "az" | "precio-asc" | "precio-desc"
+  // (el cliente igual puede cambiarlo con el selector "Ordenar")
+  ordenInicial: "original",
+
+  // Rangos del filtro "Precio". Cada uno lleva min y/o max (ambos inclusive).
+  // El texto se arma solo ("Hasta $40.000", "$40.000 a $60.000", "Desde $80.000").
+  // Para cambiar rangos editá los números; para sacar el filtro dejá la lista vacía: [].
+  rangosPrecio: [
+    { max:80000 },
+    { min:80000, max:100000 },
+    { min:100000, max:140000 },
+    { min:140000 }
+  ],
+
+  /* ---------- PRODUCTOS ---------- */
+  productos: [
+    
+    { id:"b1", nombre:"Nike Lunar Gato II", cat:"Papi / Futsal", precio:129000, antes:130000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8807643b993916ea400fa5a6aa178a70-Uhd9Ta5JDOHHf2Aba5XDoFb08FLNOU.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Lima",hex:"#b3db00",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8807643b993916ea400fa5a6aa178a70-Uhd9Ta5JDOHHf2Aba5XDoFb08FLNOU.jpg",sinStock:[38,44,45]},{nombre:"Gris / Rosa",hex:["#c2bcb8","#bd5bb1"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/3d400990f831a8294057e34d84af983c-WknNuPSSIdhTs6uWYrv6VLagynrGJA.jpg",sinStock:[38,39,40,41,43,44,45]},{nombre:"Rosa",hex:"#fc4475",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/fd858452560c72a0e808c9457f91eae9-k0KA8WVelwuYqABfVrZcIaY6kUOSIC.jpg",sinStock:[37,39,40,41,42,44,45]},{nombre:"Beige",hex:"#cfcfc2",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/4d19ab37e350617eafbd6e788f6fc350-IPW8Nmu9wknRoXZaWrh2evR0zxYhDs.jpg",sinStock:[38,39,40,41,43,44,45]},{nombre:"Amarillo",hex:"#c7b375",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/363212fa5b2e045ee151b6dee816a354-ODvbFBlvqDAISQnKjz0qetnl8K7Eg7.jpg",sinStock:[41,44]},{nombre:"Blanco",hex:"#e3e3e3",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/10b3eed2da9bdbe6a7d05e8434f280e1-Duw83eqDXUz9JNAzOaoInX9luJN5J2.jpg",sinStock:[38,40,42,43,44,45]},{nombre:"Rojo / Blanco",hex:["#942637","#e8e8e8"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/30543eecaf14ec5bb5fd08c1604218e8-Zu4H4Vb2OQxNzhN6srpZNLyP29VwgE.jpg",sinStock:[38,39,40,41,43,44,45]},{nombre:"Verde Camuflado",hex:"#5d5e3c",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d9090d35d09358f918d7779620773d33-uYtQrYDindcLKlvqYQes4P4V7f1ks6.jpg",sinStock:[38,40,42,43,44,45]},{nombre:"Celeste",hex:"#5885a6",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/068e71f28dc66aef7bf1de404504c03e-LZE2tmrEv1sw7kZB0rUclK0RLe76QP.jpg",sinStock:[38,39,40,42,43,44,45]}] },
+
+    { id:"b2", nombre:"Adidas F50 MESSI", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/400254599c55183ea500f3cbf4ce2f96-IPI3w72oBEBYcoWeNMnNWnY8ZhVTJV.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b3", nombre:"Adidas F50 MESSI", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d2429e4d5c11ee6a9d0a283dcf0278de-g4QuIdUnGHOUtJDPK95PDyg3OCCKVG.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b4", nombre:"Joma Top Flex", cat:"Papi / Futsal", precio:115000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8b8e2179b8dd62e4f2b544cb2b69b194-WX5aqqxn4QlrdwEAvfLklLzMiNG02j.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b5", nombre:"Nike Tiempo Legend", cat:"Sintético", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1789250906474-9ad5152763c4c04bec1abaf9_display-r7I3jeaH4SRqnbigehqw2Ks7Ldr1le.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Esmeralda",hex:"#467c75",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1789250906474-9ad5152763c4c04bec1abaf9_display-r7I3jeaH4SRqnbigehqw2Ks7Ldr1le.webp"},{nombre:"Negro / Blanco",hex:"#0f1114",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893159186-92139caf7cab60c0bdab23f0_display-IgKY94B0EkRkW2LA9ctdaaAWvrAzbn.webp"}] },
+
+    { id:"b6", nombre:"Nike Tiempo React", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1f1cc34826b4cd5963800fcd94d9b37b-nTSIMyPudgL9kR9l5LtRUmROBiEQHl.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Negro",hex:"#0f1114",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1f1cc34826b4cd5963800fcd94d9b37b-nTSIMyPudgL9kR9l5LtRUmROBiEQHl.jpg"},{nombre:"Blanco / Gris",hex:"#8d949c",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/db2e2b25deb8d055a6932d816919c018-UyJq3AQGQW3cOly4MnJ3K48q5z6Suq.jpg"},{nombre:"Salmón",hex:"#fa657d",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779224407618-1a56f36e96be3a9dd7793ef9_display-wLFIhq6yiWl9umojJo4D5XC0tVGOkO.webp"}] },
+
+    { id:"b8", nombre:"Nike React Gato", cat:"Papi / Futsal", precio:115000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/eb7a864b7e142e3427c9fa62c0d7ddd0-2gpPtdkBH5W7HdbeCHLNaSWZdasiyO.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b9", nombre:"Nike Phantom", cat:"Sintético", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/ca85bee74db55e371f7f85472eda939f-jmgA1y0Us4pG3FwCXUZ2GLLIqHY6yG.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b11", nombre:"Nike Magista", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8a25b4bd018ab39d3a19dcff6c674fea-cRS1gPjYfcnYdXndDSyNU5qxHu7Y57.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Gris oscuro",hex:"#2e373d",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8a25b4bd018ab39d3a19dcff6c674fea-cRS1gPjYfcnYdXndDSyNU5qxHu7Y57.jpg"},{nombre:"Blanco",hex:"#dbdcdb",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d9a6915ed2c26ebd95687a8c9ea17922-TI56XQopsj0AH0IvA0BUqSNjmlBjhY.jpg"}] },
+
+    { id:"b12", nombre:"Adidas Copa Mundial 20.1", cat:"Papi / Futsal", precio:120000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/be6b15be5426b5b717bd1e89465ed7f3-1YtASHbTi0bVVe0yTumoGBIXN6eyfz.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b13", nombre:"Nike Street Gato 5", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/59a6a8cec885af646893f5d8b21b179a-sQgTppx7pP1mJxkPexYpGBKbIMO9p7.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Azul / Negro",hex:"#113680",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/59a6a8cec885af646893f5d8b21b179a-sQgTppx7pP1mJxkPexYpGBKbIMO9p7.jpg"},{nombre:"Blanco",hex:"#babbbe",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893237706-c89be940b2a9569427a8ee0c_display-4w4tQUOOlMqORvDpDVP22JUL3pM3K0.webp"},{nombre:"Negro",hex:"#020204",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893260548-50a383f26540a7a7eee3f994_display-jCe6eOzLJVfg5K0Guwtk7bUFVkj95B.webp"}] },
+
+    { id:"b14", nombre:"Adidas Top Sala", cat:"Papi / Futsal", precio:115000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/95d40c8f96aa7c723befa4769b2dd1e6-WQpfnrlml0FXFkEMTfppXti3jnwQwD.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Azul",hex:"#2c4a98",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/95d40c8f96aa7c723befa4769b2dd1e6-WQpfnrlml0FXFkEMTfppXti3jnwQwD.jpg"},{nombre:"Bordó",hex:"#602a33",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5faa32c3429bd9a67094a25d660d8771-DXHDaexMCk4FJVYJ5ESIHaHBaIXxV4.jpg"}] },
+
+    { id:"b15", nombre:"Nike Tiempo X Lunarloon", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/0df71b75211355a008f6a7c614d520d0-FVQTJpmiHWFemnykxcJSEDUHLjiwPa.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b16", nombre:"Nike Mercurial Air Zoom Sintético", cat:"Sintético (TF)", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5dff0998d97714e4d82b383fc4cc2615-7hJ7sE6YddxXXT4gkRP2vvG3eHNI58.jpg", top:false, nuevo:false,
+      talles:[37,38,39,40,41,42,43,44], sinStock:[37,38,39,40,41,43,44],
+      colores:[{nombre:"Celeste / Azul",hex:["#9bcfcf","#00608a"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5dff0998d97714e4d82b383fc4cc2615-7hJ7sE6YddxXXT4gkRP2vvG3eHNI58.jpg"}],
+      desc:"Livianas, con malla de sujeción incluida." },
+
+    { id:"b17", nombre:"Nike Tiempo React Sintético", cat:"Sintético (TF)", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/29a6b29ec58a72b7a40d31ef939fc298-RKnLfN8CXU9KGWvopG7GWfWWiserPc.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Plateado",hex:"#8d949c",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/29a6b29ec58a72b7a40d31ef939fc298-RKnLfN8CXU9KGWvopG7GWfWWiserPc.jpg"},{nombre:"Blanco",hex:"#d6d7d2",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/0ae39d30da3747a301388977902480d3-FQp2GuF6meLnlgxM0tC3osm2L1cue1.jpg"}] },
+
+    { id:"b18", nombre:"Adidas F50 MESSI Sintético", cat:"Sintético (TF)", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/4e9b07e1692bd30bd7d29bc9a2e5105e-N6J84mTF6A20pYamB88QMQOeiRKGJo.jpg", top:false, nuevo:true,
+      talles:[39,40,41,42,43,44,45], sinStock:[],
+      desc:"Tapón bajo multitaco para césped sintético." },
+
+    { id:"b19", nombre:"Nike Mercurial AIR Zoom", cat:"Campo (FG)", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/cae972c97e2b31c04cff44293ad0a27e-1DhuxFUBpyKFnNoz5ZEYvkQLjTOSxE.jpg", top:false, nuevo:false,
+      talles:[39,40,41,42,43,44,45], sinStock:[45],
+      colores:[{nombre:"Rosa",hex:"#de314f",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/cae972c97e2b31c04cff44293ad0a27e-1DhuxFUBpyKFnNoz5ZEYvkQLjTOSxE.jpg"},{nombre:"Fuxia",hex:"#d52f5d",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/57af025b19f2e805649eb0d48bc3a06d-SrMasqlH4W0mouqyrtbOTrz13LIrBa.jpg"},{nombre:"Blanco",hex:"#dfdfdf",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786907524134-693763a36c9954659e3e95f4_display-tgJFujQPuNcA9GtmSiDGwLA0jFOaE7.webp"}],
+      desc:"Cuero flexible, el clásico de toda la vida." },
+
+    { id:"b20", nombre:"Adidas Predator ELITE", cat:"Campo (FG)", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/6cc659ee200a9b144f6554a23f8ae29a-wnvE4Z1bjmfH3U4Me1pAk69QfF5WVk.jpg", top:true, nuevo:true,
+      talles:[40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco / Rojo",hex:["#f2f2f2","#b01a31"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/6cc659ee200a9b144f6554a23f8ae29a-wnvE4Z1bjmfH3U4Me1pAk69QfF5WVk.jpg"},{nombre:"Blanco",hex:"#f2f2f2",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/9a3b40aedf8a4c33308f1275724e290b-fDSRVCTA3kmJLy0LYinnDr0ddA4Wpm.jpg"}],
+      desc:"Sin cordones, calce tipo media. Toque limpio." },
+
+    { id:"b21", nombre:"Nike Mercurial 360", cat:"Campo (FG)", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/b7655f970a913fb2420ae9bd0b8192af-HPgDmFteaeFoyvFOERPchFZ0mJcKPX.jpg", top:true, nuevo:true,
+      talles:[37,38,39,40,41,42,43,44], sinStock:[42,44,45],
+      colores:[{nombre:"Violeta",hex:"#513e94",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/b7655f970a913fb2420ae9bd0b8192af-HPgDmFteaeFoyvFOERPchFZ0mJcKPX.jpg"}],
+      desc:"Botín liviano con excelente control y velocidad." },
+
+    { id:"b22", nombre:"Nike Tiempo Legend ACC", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d1fd05709668af4dda2f2443e14162bd-e7esEJP3GWocjNjffoZLTbFoaKzHcM.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b23", nombre:"Adidas F50 Messi", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/725aa1e2993d3c4c2e5f7bd48d9cfd50-I2uHioAGhMUs7mSLWifCA9S6C3TLIH.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b24", nombre:"Nike Tiempo Legend ÉLITE", cat:"Campo (FG)", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/5a58d810ba82b41ccddd3e984c60702c-0MDbB6tlnyTlEhPAu5iMhR4PImmjxI.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b25", nombre:"Nike Mercurial AIR Zoom", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/37a93e536d0b2d9a9c62c415caefa530-A2vGxkry9GWy8nyhZMzEK1vu2BoSsc.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Negro",hex:"#000000",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/37a93e536d0b2d9a9c62c415caefa530-A2vGxkry9GWy8nyhZMzEK1vu2BoSsc.jpg"},{nombre:"Blanco",hex:"#c6baae",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223195557-864eb00a3f83ed358299bf7c_display-9o9pYOX7JSLMAQw0Vkul2aqBPDbnAg.webp"},{nombre:"Amarillo",hex:"#c8c2a3",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223798673-9383db6f98c920d1f5b05820_display-CekwF4G7af6G7iwlWkvvUUnDvjKFG5.webp"}] },
+
+    { id:"b26", nombre:"Nike Tiempo Legend Emerald", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/24ca4427eee0ea9a4468a576371d4983-jUUU7oaYdJjGBwpLrUkeWf89bRRMSP.jpg", top:true, nuevo:true,
+      talles:[40,41,42,43,44,45], sinStock:[],
+      desc:"Construcción premium para máximo rendimiento." },
+
+    { id:"b27", nombre:"Nike Tiempo Legend ÉLITE", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/a6d04d9370cb0591a42a39b3c0a7d584-xhj1L3pPL2V8tiIyrmTGH1Vtog8UMs.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b28", nombre:"Nike Tiempo Legend Emerald ÉLITE", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/543f65da60229f170a470236a060e36c-Pb3Wl8yiJuiGGLSJCwbtePOr0yj6il.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b29", nombre:"Nike Mercurial Air Zoom PRO", cat:"Campo (FG)", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223391168-a49d60f613c8df1be00d1862_display-NyUEIBsxryefN7bIw2pSrHpCYv6FL6.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco",hex:"#e0dfe2",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223391168-a49d60f613c8df1be00d1862_display-NyUEIBsxryefN7bIw2pSrHpCYv6FL6.webp"},{nombre:"Fuxia",hex:"#c63068",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/05039e796917bb46fca23c232b9c7c1a-CXuVYgGHYyt4dHZrmkjv4VpwtAea05.jpg"}] },
+
+    { id:"b30", nombre:"Nike Mercurial Hypervenom ACC", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/675802a7f12fd4c3166927ed7b14e851-NPLy1TczCPryhSQnucq4m9TftAUJJZ.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b31", nombre:"Nike Tiempo React PRO", cat:"Campo (FG)", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d0b68191094a94da2640d032ef6c5a2e-Neo5dX7lI0I7C3mdpqN7WfAzAlWLLS.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b32", nombre:"Nike Phantom GX PRO", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1a8621e68dd15f67583e77215d2bea54-ctpMEnR56oQETDULk6lGinvV3wZdno.jpg", top:true, nuevo:false,
+      talles:[40,41,42,43,44,45], sinStock:[45],
+      colores:[{nombre:"Negro",hex:"#111111",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1a8621e68dd15f67583e77215d2bea54-ctpMEnR56oQETDULk6lGinvV3wZdno.jpg"},{nombre:"Fuxia",hex:"#d00460",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/a28c96d872a383571f63d6b98f3cef0d-fIX517pgVtRe9oAF3Ugn6sgsoj2IE5.jpg"},{nombre:"Blanco",hex:"#fafafa",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/4f915d3ebda18aee8180998e37d582bc-e7XSv17jR7M670PSH4UfDblXBukC7m.jpg"},{nombre:"Gris",hex:"#8d949c",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/ca6d19bcabf7acb46c20d9e870df0076-xEV41hyodfkgUYImhLvAOOu4Wv31hX.jpg"},{nombre:"Lila",hex:"#8885a8",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8b0cfb019eccb68c2a85d7acf4e5bf9b-xbQauVejjYNqKJgO8BzXZlNhoiTLg6.jpg"}],
+      desc:"Diseñado para jugadores que buscan precisión y control." },
+
+    { id:"b33", nombre:"Nike Phantom GX PRO", cat:"Campo (FG)", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/551bdc341330975c8d35b2c17265810e-AOMDaU8XU5zwAnRoRem0uIuPWJ0G9t.jpg", top:true, nuevo:false,
+      talles:[40,41,42,43,44,45], sinStock:[45],
+      colores:[{nombre:"Blanco / Celeste",hex:["#fafafa","#1a95ba"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/551bdc341330975c8d35b2c17265810e-AOMDaU8XU5zwAnRoRem0uIuPWJ0G9t.jpg"}],
+      desc:"Diseñado para jugadores que buscan precisión y control." },
+
+    { id:"b35", nombre:"Nike Gato SB", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/8b1142a8e2551638202ac9d9fd9c8f39-FnnyKyWVdj5KXkZH2yhNQ9IHh3FUaz.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b36", nombre:"Nike Tiempo React PRO", cat:"Papi / Futsal", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/05ef76d9e63f20de86e4a1597ff1890b-4Qkl1zRUBxjfYEObx2UdM8GyDwIRLj.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco",hex:"#dcdddb",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/05ef76d9e63f20de86e4a1597ff1890b-4Qkl1zRUBxjfYEObx2UdM8GyDwIRLj.jpg"},{nombre:"Blanco",hex:"#e5e5e5",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d87d27938c9b772a8c3cf01ede77d531-pgLK8cWnQB1OdbYlgXMsyVMTiRZmoa.jpg"},{nombre:"Lila",hex:"#9089b0",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1a8f3f6750f12b7393ff9e913c4bde0b-X9s6gDJ7mufR1lCz4vs22nX8gREovZ.jpg"}] },
+
+    { id:"b37", nombre:"Adidas Copa Mundial", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d8e0ca9c35e1040d1ccbace44dda7f57-gPTyoTkkIjog725cwr6IZQ8JDLeXmn.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Negro",hex:"#434244",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d8e0ca9c35e1040d1ccbace44dda7f57-gPTyoTkkIjog725cwr6IZQ8JDLeXmn.jpg"},{nombre:"Celeste",hex:"#348e9e",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/d34cadcb40ca99114a89c70270c0df71-7ZpYLDtE9TjbDBi7D8fHcmFP1XLp3U.jpg"},{nombre:"Negro",hex:"#12151b",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/c7ee75879d3d3bc16b0c49ce76956b7c-tZp8aEtIj5KmHS0J7zDuOkiHLHENvD.jpg"}] },
+
+    { id:"b38", nombre:"Nike T90", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/391d2b9d369fbf2b2634e21369faf6e3-EZ3k06elGblCAxh5mn0Jha100C7Kwu.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b39", nombre:"Nike React Gato", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/bbf1ddfc974bfefef637aa86d4a7cb0b-LSRFHgVXDpn8jIRCSvNzBTyOn02Ohk.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b40", nombre:"Adidas Top Sala", cat:"Papi / Futsal", precio:125000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/0e7bb17dac4ce4ec5d24659508097cdb-R8N0jCmlHtkwW8OlBwsF75a2482bSW.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b41", nombre:"Nike Tiempo React", cat:"Sintético (TF)", precio:135000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/65b8e829d18d07512742b7f4936db205-4Ps4vjEyulcJueFCVKawV8RJNphGI5.jpg", top:false, nuevo:true,
+      talles:[36,37,38,39,40,41,42,43,44], sinStock:[36,38,39,41,44],
+      colores:[{nombre:"Plateado",hex:"#8d949c",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/65b8e829d18d07512742b7f4936db205-4Ps4vjEyulcJueFCVKawV8RJNphGI5.jpg"},{nombre:"Bronce",hex:"#875b61",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779224510997-64474e75131b297130fdaf29_display-OJPGIBewDAqHWzCkai5QvZWBuSvkpa.webp"}],
+      desc:"Botines de calidad premium. Convertite en leyenda" },
+
+    { id:"b42", nombre:"Nike Tiempo Emerald", cat:"Sintético (TF)", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/684e7e3bb0291431db72e1096870cbd8-lEAWknpjS4VnFTxYu5rJvRIndBTzPt.jpg", top:false, nuevo:false,
+      talles:[37,38,39,40,41,42,43,44], sinStock:[38,39,41,45],
+      colores:[{nombre:"Blanco",hex:"#e3e3e3",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/684e7e3bb0291431db72e1096870cbd8-lEAWknpjS4VnFTxYu5rJvRIndBTzPt.jpg"},{nombre:"Esmeralda",hex:"#447772",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1c012751bd951b7e667ac5fd18f86961-ubBSjPJuov89FPjc5Dmsn6qeMlLrQQ.jpg"}],
+      desc:"Grip interno, evitan que el pie se mueva dentro del botín." },
+
+    { id:"b43", nombre:"Nike Mercurial Air Zoom", cat:"Sintético", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/001c057501e0afe06235c8b96d0a81f5-7rADLiJqBOdI0ungeTrgIDRrAfoAHr.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco",hex:"#e5e6e4",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/001c057501e0afe06235c8b96d0a81f5-7rADLiJqBOdI0ungeTrgIDRrAfoAHr.jpg"},{nombre:"Salmón",hex:"#e99974",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914019121-2fc722e86f625dff338cc3bf_display-uS8mRNiC3onXrhVwXhYZucKDyMxfYL.webp"}] },
+
+    { id:"b44", nombre:"Adidas Copa Mundial", cat:"Sintético", precio:155000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/a658e850eef5d01d483c089cc12649d6-8HhbdkbgGcFIGNg2Bidsll80mYHOxk.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b45", nombre:"Nike Mercurial Air Zoom", cat:"Sintético", precio:155000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/1f0dbaed8f0f78b11980a0a71241f5c5-PnEc33uRx6MkRMvUhuI6ISvzPpxH8U.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b46", nombre:"Nike Tiempo React PRO", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/dedfa5a4f03d86c3fa65d0d78970b386-aGJHahSM8ThofaekFemz3ttOCC2a7D.jpg", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b47", nombre:"Joma Top Flex Rebound", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779139491816-6699144fd15e26f3d7a8537e_display-QMz55YGsZRL9NHJouhFTTl4IO6P5Ml.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco / Azul",hex:"#cecece",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779139491816-6699144fd15e26f3d7a8537e_display-QMz55YGsZRL9NHJouhFTTl4IO6P5Ml.webp"},{nombre:"Blanco",hex:"#e1deda",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779141760402-e77a8c67b1c828de38e0fd94_display-uplG6WqBa5huL6XhJmxbK1eU0gF0eI.webp"},{nombre:"Plateado",hex:"#8d949c",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1780344059226-c501a54bfdddd05c672502af_display-mkHCwxQgSPEIGcWVnE1uF6epQZLg7o.webp"},{nombre:"Blanco / Verde",hex:"#d6d1c5",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902277041-3340d10cd0d5a32c8f0e3edd_display-tUGGPV91OdGoLf43Oa1qMfT7gP9hRj.webp"},{nombre:"Blanco",hex:"#e7e7e7",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792774080-e5e0d8f48c243284a0a3ea50_display-ncgNQZtdN6b0Oby52J9S1tiPIw2Ar7.webp"}] },
+
+    { id:"b48", nombre:"Joma Top Flex", cat:"Papi / Futsal", precio:139000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779141671404-0e655ac274e49a583396d857_display-a3mQOJYw0gv8sr0sDo9iHT0OO3BkPY.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Negro",hex:"#141414",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779141671404-0e655ac274e49a583396d857_display-a3mQOJYw0gv8sr0sDo9iHT0OO3BkPY.webp"},{nombre:"Negro",hex:"#12151b",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786910878769-d6960f52ac9b71255393956d_display-vZrtXfFttP9PgnOtXbHu3jOe7Az6fE.webp"}] },
+
+    { id:"b49", nombre:"Adidas Predator ELITE", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223498428-ce3d3e99be1a4db7aba9187f_display-BLcFE3bxgJwH8GsAX0uDyAr7GFWa9G.webp", top:true, nuevo:true,
+      talles:[40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Negro",hex:"#111111",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223498428-ce3d3e99be1a4db7aba9187f_display-BLcFE3bxgJwH8GsAX0uDyAr7GFWa9G.webp"},{nombre:"Blanco / Verde",hex:["#f2f2f2","#576930"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786908873569-c8601f637365b23c0fcdb657_display-nXHSi2lc9Eth5bpUiZU1HxuKATp7ZT.webp"}],
+      desc:"Sin cordones, calce tipo media. Toque limpio." },
+
+    { id:"b50", nombre:"Nike Mercurial Air Zoom FLYKNIT", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223663310-1b8ee15c6e97bbc87d8458f5_display-HGBLeyfgNbhBGZaSR00PHsDyXAKAsZ.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b51", nombre:"Nike Phantom GX", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779223858050-6122970936427f6c810c2c87_display-iYVCibZ03nyx0zznA6ysi7RNCpGOMJ.webp", top:false, nuevo:true,
+      talles:[37,38,39,40,41,42,43], sinStock:[37,41,43,44,45],
+      desc:"Mayor estabilidad y potencia para cancha de césped natural." },
+
+    { id:"b52", nombre:"Nike Street Gato", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1779893203232-c1f9e3cfc79cfcfbf68d7891_display-zXmTpx0EPWSfelS6nobZRalePuLyt3.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b53", nombre:"Nike Gato SB", cat:"Papi / Futsal", precio:155000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1780356718259-45c7c5c0a5a3bfea097e8f53_display-FZUCsYoOtUcYHb01lw8zKjycrcaZQT.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco",hex:"#e2e2e2",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1780356718259-45c7c5c0a5a3bfea097e8f53_display-FZUCsYoOtUcYHb01lw8zKjycrcaZQT.webp"},{nombre:"Azul / Amarillo",hex:"#1860c4",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1789249960010-e431c271e30a2644acfe8f43_display-D9rmXlHpyXTHVXo6uJh14xgVX0hAjI.webp"}] },
+
+    { id:"b54", nombre:"Joma Top Flex", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902129641-879393148b39eb38a3fbab11_display-asKHpSDpL7FunQkYaxorwdFCcDILLt.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco",hex:"#ffffff",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902129641-879393148b39eb38a3fbab11_display-asKHpSDpL7FunQkYaxorwdFCcDILLt.webp"},{nombre:"Blanco / Gris",hex:"#c7c7c7",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787154953070-2ac8d0c07e476b94b30d9c26_display-3FpheUqfzFN5PRC3jfUWSZmn5EXPJo.webp"}] },
+
+    { id:"b55", nombre:"Nike Sala Premier", cat:"Papi / Futsal", precio:115000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902547320-d9fd81895e7ee070d0b366ad_display-3CtEzNrTWqnMXn1FyI2qfsflcQL31J.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b56", nombre:"Nike Tiempo X", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786902660524-345e1db0d82166ca8734aa82_display-Qs8gu8SstSWjheCUriglcS4fISveDl.webp", top:false, nuevo:false,
+      talles:[37,38,39,40,41,42,43], sinStock:[38,39,41,42,43],
+      desc:"Liviano y cómodo para jugar todos los días." },
+
+    { id:"b57", nombre:"Nike T90 Negro", cat:"Papi / Futsal", precio:129000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786911245857-1d2bb14061e310600ed59cce_display-J6ExVp7QMA41UJSYy476vcWr7msfTB.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b58", nombre:"Nike Phantom ELITE", cat:"Campo (FG)", precio:149000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914439996-2111071c99fc20275adc8ba8_display-TpLLOtpFfVFUzfLZfvlVygX0hRaQvZ.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Gris",hex:"#8d949c",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914439996-2111071c99fc20275adc8ba8_display-TpLLOtpFfVFUzfLZfvlVygX0hRaQvZ.webp"},{nombre:"Fuxia",hex:"#ef5669",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1786914511118-5f64a35b1d247ab94fc4202f_display-AQbM2s1hkiyn3ucV7u8W2joAXdgQep.webp"}] },
+
+    { id:"b59", nombre:"Joma Regate Rebound", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787155303014-ee9537e59381a61f87870af9_display-cOKiLBdwsggScD9sFmAOXxKkr5gYei.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco",hex:"#e3e3e3",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787155303014-ee9537e59381a61f87870af9_display-cOKiLBdwsggScD9sFmAOXxKkr5gYei.webp"},{nombre:"Negro",hex:"#292929",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787155321449-8854a63cb8361ec9231e7e6d_display-EeI6nXmo4MCGwAn1KUnTgqwu3lkHb2.webp"}] },
+
+    { id:"b60", nombre:"Joma Top Flex Plus", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791230023-c9092416c621cc909ea4400e_display-HxLphoX6tmmJkEIP5QZXFm9TVrDdFe.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco / Rosa",hex:"#d9d9d9",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791230023-c9092416c621cc909ea4400e_display-HxLphoX6tmmJkEIP5QZXFm9TVrDdFe.webp"},{nombre:"Blanco",hex:"#dedede",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791287220-407cfac0af27e5d242f0e8f9_display-RzTWDaoLDNSYbJz5KKDnNCqN78Xzk9.webp"}] },
+
+    { id:"b61", nombre:"Nike Tiempo JOGA Bonito", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791333859-a214d36d7fd629552cb36af0_display-xsyRMM5RQSDBlnBNlJyVielUMNBfUV.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b62", nombre:"Nike Phantom GX 6 ELITE", cat:"Campo (FG)", precio:190000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791579158-c689753fb4ba95eab6843072_display-4wBiDu0krd0pUZXY3nQZbTqNVvSLR3.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Púrpura",hex:"#3637ac",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791579158-c689753fb4ba95eab6843072_display-4wBiDu0krd0pUZXY3nQZbTqNVvSLR3.webp"},{nombre:"Negro",hex:"#0a0a0a",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791685857-bd8a83afa41c7b9af7c146e9_display-bGNdk1ylbiH87pzk87rdx8NTHJuFzb.webp"},{nombre:"Blanco",hex:"#f0f0f0",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791796496-e67966090d7608f67712496f_display-QXoqnMswasBiMR7eBTAjUZ2rPlPVAq.webp"}] },
+
+    { id:"b63", nombre:"Nike Phantom GX 6 ELITE MAMBA", cat:"Campo (FG)", precio:190000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791766374-4f5ec59d4bff41984b261e2f_display-71yi2kbrqGUkSB8zcxU5GgU4rGIZPK.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b64", nombre:"Adidas F50 ELITE Intercambiables", cat:"Campo (FG)", precio:190000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791838912-4a1fa08703dc39dd421c1159_display-E46wiLGZQcq5M4ga4FC3xXlg3ZMudA.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco",hex:"#e6e6e6",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791838912-4a1fa08703dc39dd421c1159_display-E46wiLGZQcq5M4ga4FC3xXlg3ZMudA.webp"},{nombre:"Negro",hex:"#050505",img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787791873460-aa3bd766f09d0f9c09e069f8_display-RIlaU9hjm2amkUyp9dWBx3oNHS7EDe.webp"}] },
+
+    { id:"b65", nombre:"Nike Tiempo Ronaldinho", cat:"Papi / Futsal", precio:190000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792618584-090de6d0cb4f2b384652ef69_display-wFZLbddiDkTOwb2Ot0BA4axYgiQzVI.webp", top:true, nuevo:true,
+      talles:[38,39,40,41,42,43,44], sinStock:[],
+      colores:[{nombre:"Blanco / Dorado",hex:["#fafafa","#ffcc00"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792618584-090de6d0cb4f2b384652ef69_display-wFZLbddiDkTOwb2Ot0BA4axYgiQzVI.webp"},{nombre:"Negro / Dorado",hex:["#08080a","#ffcc00"],img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792646347-b0f2d39ff1ec9e0082620b7c_display-vuPcBDhrIeOmDUXJwLsczgfOPI4pkt.webp"}],
+      desc:"Multitaco de gran agarre para césped sintético." },
+
+    { id:"b66", nombre:"Nike Tiempo X Lunarloon", cat:"Papi / Futsal", precio:145000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792730323-e981c193eb483b12b350b560_display-cmY0h3c9nvw5fdkScC83eFd0OS3LLY.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b67", nombre:"Joma Regate", cat:"Papi / Futsal", precio:165000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792817940-3c1f177182fcd3cb79890cce_display-9XsJqMHBobkFPiGtNSO7riZqmmoUlB.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+    { id:"b68", nombre:"Nike Tiempo Ronaldinho Sintético", cat:"Sintético (TF)", precio:180000,
+      img:"https://atapk3xd9rjdzvlp.public.blob.vercel-storage.com/products/1787792948221-abb1a949ede451eaa2c4b17b_display-UnupznANK6SILD1iEkmHNeXokRT24b.webp", top:false, nuevo:false,
+      talles:[38,39,40,41,42,43,44], sinStock:[] },
+
+  ],
+
+  /* ---------- BARRA DE CONFIANZA ---------- */
+  trust: [
+    { ico:"🚚", t:"Entrega en 24hs" },
+    { ico:"💵", t:"Hasta 3 cuotas sin interés" },
+    { ico:"🔄", t:"Cambio de talle" }
+  ],
+
+  /* ---------- GUÍA DE TALLES ---------- */
+  tablaTalles: [
+    ["37","38","6",  "24,0"],
+    ["38","39","7","25,0"],
+    ["39","40","7.5 - 8",  "25,5"],
+    ["40","41","8.5",  "26,0"],
+    ["41","42","9 - 9.5","26,5"],
+    ["42","43","10","27,5"],
+    ["43","44","10.5 - 11", "28,5"],
+    ["44","45","11.5 - 12", "29,5"]
+  ],
+  talleNota: "Puede variar ±0,5 cm según el modelo. Si estás entre dos talles, pedí el más grande.",
+
+  /* ---------- FOOTER ---------- */
+  footTag:  "Jugás distinto cuando el botín acompaña.",
+  footFine: "CABA · GBA",
+  copy:     "© 2026 BOOT.ARG · Todos los derechos reservados",
+
+  /* ---------- SECCIONES INFORMATIVAS DEL FOOTER ---------- */
+  info: [
+    { ico:"🏪", titulo:"Quiénes somos", html:`
+      <h4>Nuestra historia</h4>
+      <p>Somos una tienda especializada en <b>botines importados</b> para cancha 11, papi y sintético. Trabajamos con stock real: no publicamos lo que no tenemos.</p>
+      <h4>Cómo trabajamos</h4>
+      <p>Operamos 100% online. Hacés el pedido desde la web y te lo llevamos a tu puerta en CABA, GBA y La Plata. <b>Pagás online con Mercado Pago o en efectivo cuando llega.</b></p>
+      <h4>Los números</h4>
+      <div class="stat-row">
+        <div class="stat"><b>+10.000</b><small>clientes</small></div>
+        <div class="stat"><b>4.9 ★</b><small>calificación</small></div>
+      </div>` },
+
+    { ico:"🚚", titulo:"Envíos y zonas", html:`
+      <h4>Costo y pago</h4>
+      <p>Envío fijo <b>$8.500</b> ($9.000 a La Plata). Pagás online con Mercado Pago (el envío se suma al total) o en efectivo al recibir, sin adelanto.</p>
+      <h4>Tiempo de entrega</h4>
+      <p><b>24hs hábiles</b> en CABA, GBA y La Plata.</p>
+      <h4>CABA</h4><p>Entregamos en los 48 barrios.</p>
+      <h4>GBA Norte</h4>
+      <div class="pill-grid"><span class="pill">San Isidro</span><span class="pill">Vicente López</span><span class="pill">San Martín</span><span class="pill">Tigre</span><span class="pill">Pilar</span><span class="pill">Escobar</span><span class="pill">San Miguel</span><span class="pill">Tres de Febrero</span></div>
+      <h4>GBA Oeste</h4>
+      <div class="pill-grid"><span class="pill">La Matanza</span><span class="pill">Morón</span><span class="pill">Ituzaingó</span><span class="pill">Hurlingham</span><span class="pill">Merlo</span><span class="pill">Moreno</span><span class="pill">Luján</span></div>
+      <h4>GBA Sur</h4>
+      <div class="pill-grid"><span class="pill">Lomas de Zamora</span><span class="pill">Lanús</span><span class="pill">Avellaneda</span><span class="pill">Quilmes</span><span class="pill">Berazategui</span><span class="pill">Florencio Varela</span><span class="pill">Alte. Brown</span><span class="pill">Esteban Echeverría</span><span class="pill">Ezeiza</span></div>
+      <h4>La Plata y alrededores</h4>
+      <div class="pill-grid"><span class="pill">La Plata</span><span class="pill">Ensenada</span><span class="pill">Berisso</span><span class="pill">Brandsen</span></div>` },
+
+    { ico:"🔄", titulo:"Cambios de talle", html:`
+      <h4>Qué aceptamos</h4>
+      <p>✓ Cambio de talle · ✓ Botín sin uso · ✓ Con caja y etiquetas originales</p>
+      <h4>Qué no aceptamos</h4>
+      <p>✗ Devolución de dinero · ✗ Botín usado en cancha · ✗ Sin caja · ✗ Pasadas las 48hs</p>
+      <h4>Cómo se hace</h4>
+      <ol>
+        <li>Escribinos por WhatsApp dentro de las <b>48hs</b> de recibido.</li>
+        <li>Mandanos foto del botín con su caja y etiquetas.</li>
+        <li>Coordinamos el retiro y el envío del talle correcto.</li>
+        <li>El envío del cambio lo abona el comprador.</li>
+      </ol>
+      <p class="note">⚠️ No hacemos devoluciones de dinero. Solo cambio por otro talle del mismo modelo.</p>` },
+
+    { ico:"❓", titulo:"Preguntas frecuentes", html:`
+      <h4>¿Cómo hago un pedido?</h4><p>Elegís modelo y talle, lo sumás al pedido, completás tus datos y elegís cómo pagar: <b>Mercado Pago</b> o <b>WhatsApp</b> (efectivo al recibir).</p>
+      <h4>¿Cuándo pago?</h4><p>Como prefieras: online con <b>Mercado Pago</b>, o en <b>efectivo</b> cuando recibís el pedido (sin adelanto).</p>
+      <h4>¿Las fotos son reales?</h4><p>Sí, son del producto que recibís.</p>
+      <h4>¿Puedo pedir varios pares?</h4><p>Sí. El envío es uno solo sin importar la cantidad, y a partir de 2 pares se aplica el descuento.</p>
+      <h4>¿Cómo sé qué talle pedir?</h4><p>Medí tu pie en cm y compará con la guía de talles. Si estás justo entre dos, pedí el más grande.</p>
+      <h4>¿Tienen local?</h4><p>No, operamos online con entrega a domicilio.</p>
+      <h4>¿En qué horario responden?</h4><p>Lunes a sábado de 9 a 21hs.</p>` },
+
+    { ico:"📄", titulo:"Términos y condiciones", html:`
+      <h4>Precios y disponibilidad</h4><p>Los precios pueden cambiar sin aviso. El stock es limitado y puede agotarse antes de confirmar.</p>
+      <h4>Confirmación</h4><p>El pedido queda confirmado cuando se acredita el pago en Mercado Pago, o cuando lo acordamos por WhatsApp si pagás en efectivo al recibir. Hasta ese momento el stock no queda reservado.</p>
+      <h4>Entrega</h4><p>Los tiempos son estimativos. No nos responsabilizamos por demoras externas una vez despachado.</p>
+      <h4>Datos personales</h4><p>Se usan solo para gestionar tu pedido. No se comparten con terceros.</p>
+      <h4>Devoluciones</h4><p>No realizamos devoluciones de dinero. Solo cambios de talle dentro de las 48hs.</p>` }
+  ]
+};
+/* ================= FIN DE LA CONFIGURACIÓN ================= */
+
+
+/* ---------- Utilidades ---------- */
+const $ = (s,c=document)=>c.querySelector(s);
+const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
+const money = n => CONFIG.moneda + n.toLocaleString("es-AR");
+
+// Imagen de reemplazo cuando no hay foto cargada
+function placeholder(txt="BOTÍN", ratio="1/1", tint=null){
+  const w = 600, h = ratio==="3/4" ? 800 : 600;
+  const esc = x => String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const t = esc(String(txt).slice(0,22).toUpperCase());
+  const path1 = "M-135 30 C-120 -25 -90 -45 -55 -40 C-25 -36 -5 -18 25 -4 C60 12 100 16 128 26 C142 31 146 44 140 54 L-128 54 C-138 54 -140 44 -135 30 Z";
+  const studs = "M-80 -30 L-60 10 M-50 -34 L-32 6 M-20 -24 L-6 12";
+  let defsExtra = "", shoe, sub;
+  if(tint && tint.hex){
+    // Botín pintado con el color elegido (uno o dos colores)
+    const c1 = Array.isArray(tint.hex) ? tint.hex[0] : tint.hex;
+    const c2 = Array.isArray(tint.hex) ? tint.hex[1] : null;
+    const m = /^#?([0-9a-f]{6})$/i.exec(String(c1).trim());
+    const lum = m ? (parseInt(m[1].slice(0,2),16)*.299 + parseInt(m[1].slice(2,4),16)*.587 + parseInt(m[1].slice(4,6),16)*.114)/255 : 0;
+    const marca = lum > .6 ? "#000" : "#fff";
+    if(c2) defsExtra = `<linearGradient id="c" x1="0" y1="0" x2="1" y2="1"><stop offset=".5" stop-color="${c1}"/><stop offset=".5" stop-color="${c2}"/></linearGradient>`;
+    shoe = `<g transform="translate(${w/2},${h/2 - 20})" stroke-linejoin="round" stroke-linecap="round" stroke-width="7">
+    <path d="${path1}" fill="${c2 ? "url(#c)" : c1}" stroke="#fff" stroke-opacity=".5"/>
+    <path d="M-128 54 L140 54" fill="none" stroke="#fff" stroke-opacity=".3"/>
+    <path d="${studs}" fill="none" stroke="${marca}" stroke-opacity=".4" stroke-width="5"/>
+  </g>`;
+    sub = `<text x="50%" y="${h - 28}" text-anchor="middle" fill="#9aa1a8" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold">${esc(tint.nombre||"")}</text>`;
+  } else {
+    shoe = `<g transform="translate(${w/2},${h/2 - 20})" fill="none" stroke="#ccff00" stroke-opacity=".55" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="${path1}"/>
+    <path d="M-128 54 L140 54" stroke-opacity=".3"/>
+    <path d="${studs}" stroke-width="5" stroke-opacity=".45"/>
+  </g>`;
+    sub = `<text x="50%" y="${h - 28}" text-anchor="middle" fill="#3d4349" font-family="Arial,Helvetica,sans-serif" font-size="18">cargá tu foto acá</text>`;
+  }
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#16191c"/><stop offset="1" stop-color="#0b0d0f"/></linearGradient>${defsExtra}</defs>
+  <rect width="${w}" height="${h}" fill="url(#g)"/>
+  ${shoe}
+  <text x="50%" y="${h - 58}" text-anchor="middle" fill="#6d747b" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold" letter-spacing="2">${t}</text>
+  ${sub}
+</svg>`;
+  return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+}
+// tint (opcional): el color elegido, para pintar la imagen de reemplazo
+function setImg(el, src, fallbackTxt, ratio, tint){
+  const fb = placeholder(fallbackTxt, ratio, tint);
+  el.src = (src && src.trim()) ? src.trim() : fb;
+  el.onerror = ()=>{ el.onerror=null; el.src=fb; };
+}
+function toast(msg){
+  const t=$("#toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("show"),2200);
+}
+
+/* ---------- Bloqueo de scroll de fondo (clave para que el carrito
+   funcione bien en mobile: sin esto, la página de atrás se mueve
+   al arrastrar el dedo sobre el overlay o el drawer) ---------- */
+let _scrollY = 0, _lockCount = 0;
+function lockBody(){
+  if(_lockCount === 0){
+    _scrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.top = (-_scrollY) + "px";
+    document.body.classList.add("lock");
+  }
+  _lockCount++;
+}
+function unlockBody(){
+  _lockCount = Math.max(0, _lockCount - 1);
+  if(_lockCount === 0){
+    // html tiene scroll-behavior:smooth; sin desactivarlo, el scrollTo
+    // se anima desde arriba (0) hasta la posición guardada y parece que
+    // la página "sube". Lo forzamos a instantáneo solo en este momento.
+    const root = document.documentElement;
+    const prevBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    document.body.classList.remove("lock");
+    document.body.style.top = "";
+    window.scrollTo(0, _scrollY);
+    root.style.scrollBehavior = prevBehavior;
+  }
+}
+
+/* ---------- Render de textos ---------- */
+$("#ticker").textContent = CONFIG.ticker;
+$("#promoStrip").textContent = CONFIG.promoStrip;
+$("#logoTxt").innerHTML = CONFIG.marca + '<span>' + CONFIG.marcaAccento + '</span>';
+$("#wspTop").href = "https://wa.me/" + CONFIG.whatsapp;
+$("#heroEyebrow").textContent = CONFIG.heroEyebrow;
+$("#heroTitle").innerHTML = CONFIG.heroTitle;
+$("#heroLead").textContent = CONFIG.heroLead;
+$("#heroChips").innerHTML = CONFIG.heroChips.map(c=>`<span class="chip">${c}</span>`).join("");
+$("#heroTag").textContent = CONFIG.heroTag;
+$("#heroCta").textContent = CONFIG.heroCta;
+$("#ratingVal").textContent = CONFIG.rating;
+$("#ratingTxt").textContent = CONFIG.ratingTxt;
+$("#promoTitle").textContent = CONFIG.promoTitle;
+$("#promoRows").innerHTML = CONFIG.promos.map(p=>`<div class="promo-row"><span>${p.texto}</span><b>${p.off}% OFF</b></div>`).join("");
+$("#promoNote").textContent = CONFIG.promoNote;
+$("#railKicker").textContent = CONFIG.railKicker;
+$("#railTitle").textContent = CONFIG.railTitle;
+$("#railSub").textContent = CONFIG.railSub;
+$("#galTitle").textContent = CONFIG.galTitle;
+$("#galSub").textContent = CONFIG.galSub;
+$("#catTitle").textContent = CONFIG.catTitle;
+$("#catSub").textContent = CONFIG.catSub;
+$("#footLogo").textContent = CONFIG.marca + CONFIG.marcaAccento;
+$("#footTag").textContent = CONFIG.footTag;
+$("#footFine").innerHTML = CONFIG.footFine + "<br>" + CONFIG.copy;
+$("#trust").innerHTML = CONFIG.trust.map(t=>`<div><span class="ico">${t.ico}</span><b>${t.t}</b></div>`).join("");
+$("#sizeTable").innerHTML = CONFIG.tablaTalles.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("");
+$("#sizeNote").textContent = CONFIG.talleNota;
+setImg($("#heroImg"), CONFIG.heroImg, "foto principal");
+
+// Galería
+$("#gal").innerHTML = CONFIG.galeria.map((_,i)=>`<figure><img data-gal="${i}" alt="Look ${i+1}"></figure>`).join("");
+$$("#gal img").forEach((img,i)=> setImg(img, CONFIG.galeria[i], "look "+(i+1), "3/4"));
+
+// Footer links
+$("#flinks").innerHTML = CONFIG.info.map((s,i)=>
+  `<button data-info="${i}">${s.ico} ${s.titulo}<span class="arrow">›</span></button>`).join("");
+
+/* ---------- Productos ---------- */
+let filtro = "todos";
+const ORDENES = [
+  {v:"original",   t:"Por defecto"},
+  {v:"az",         t:"A–Z"},
+  {v:"precio-asc", t:"Menor precio"},
+  {v:"precio-desc",t:"Mayor precio"}
+];
+let orden = ORDENES.some(o=>o.v===CONFIG.ordenInicial) ? CONFIG.ordenInicial : "original";
+let rangoPrecio = -1;   // -1 = todos los precios; si no, índice dentro de CONFIG.rangosPrecio
+const RANGOS = CONFIG.rangosPrecio || [];
+const rangoTxt = r => r.texto || (r.min!=null && r.max!=null ? `${money(r.min)} a ${money(r.max)}`
+                                 : r.min!=null ? `Desde ${money(r.min)}` : `Hasta ${money(r.max)}`);
+const collator = new Intl.Collator("es", {sensitivity:"base", numeric:true});
+const P = id => CONFIG.productos.find(p=>p.id===id);
+// Colores: fondo de la muestra (un color o bicolor) y foto según el color elegido
+const colorBg = c => Array.isArray(c.hex) ? `linear-gradient(135deg,${c.hex[0]} 50%,${c.hex[1]} 50%)` : c.hex;
+const colorDe = (p,nombre) => (p.colores||[]).find(c=>c.nombre===nombre);
+const imgDe   = (p,nombre) => { const c=colorDe(p,nombre); return (c && c.img && c.img.trim()) || p.img; };
+const off = p => p.antes ? Math.round((1 - p.precio/p.antes)*100) : 0;
+
+// Stock de talles según el color
+const tieneT = (arr,t) => (arr||[]).some(x=>String(x)===String(t));
+// ¿Hay stock del talle t en el color c? (c = objeto color o null → stock general del producto)
+function talleOk(p,t,c){
+  if(c){
+    if(Array.isArray(c.talles) && !tieneT(c.talles,t)) return false;
+    return !tieneT(Array.isArray(c.sinStock) ? c.sinStock : p.sinStock, t);
+  }
+  return !tieneT(p.sinStock,t);
+}
+// Disponibilidad a mostrar: con color elegido, la de ese color; sin color, la de "algún color"
+function talleDisp(p,t,c){
+  const cols = p.colores || [];
+  if(c || !cols.length) return talleOk(p,t,c);
+  return cols.some(k=>talleOk(p,t,k));
+}
+// Actualiza los botones de talle de una tarjeta según el color elegido
+function actualizarTalles(card, avisar){
+  const p  = P(card.dataset.id);
+  const sw = $('.swatch[aria-pressed="true"]', card);
+  const c  = sw ? p.colores[+sw.dataset.color] : null;
+  $$(".size", card).forEach(b=>{
+    const ok = talleDisp(p, b.dataset.size, c);
+    b.disabled = !ok;
+    b.title = ok ? "" : "Sin stock" + (c ? " en " + c.nombre : "");
+    if(!ok && b.getAttribute("aria-pressed")==="true"){
+      b.setAttribute("aria-pressed","false");
+      if(avisar) toast("El talle " + b.dataset.size + " no está disponible en " + c.nombre);
+    }
+  });
+}
+
+function cardHTML(p){
+  const badges = [];
+  if(p.top)   badges.push('<span class="badge top">⭐ TOP</span>');
+  if(p.nuevo) badges.push('<span class="badge new">NUEVO</span>');
+  if(off(p)>0) badges.push(`<span class="badge off">-${off(p)}%</span>`);
+  const cols = p.colores || [];
+  const unico = cols.length === 1;
+  const sizes = p.talles.map(t=>{
+    const no = !talleDisp(p, t, unico ? cols[0] : null);
+    return `<button class="size" data-size="${t}" aria-pressed="false" ${no?"disabled":""}${no?` title="Sin stock"`:""}>${t}</button>`;
+  }).join("");
+  const colorsHTML = cols.length ? `<div class="colors" role="group" aria-label="Color">
+        <span class="clbl">Color: <b>${unico ? cols[0].nombre : "elegí uno"}</b></span>
+        ${cols.map((c,i)=>`<button class="swatch" data-color="${i}" aria-pressed="${unico}" aria-label="Color ${c.nombre}" title="${c.nombre}"><i style="--c:${colorBg(c)}"></i></button>`).join("")}
+      </div>` : "";
+  return `<article class="card" data-id="${p.id}">
+    <div class="ph"><img alt="${p.nombre}"><div class="badges">${badges.join("")}</div></div>
+    <div class="card-body">
+      <div class="cat">${p.cat}</div>
+      <h3>${p.nombre}</h3>
+      <div class="price"><span class="now">${money(p.precio)}</span>${p.antes?`<span class="was">${money(p.antes)}</span>`:""}</div>
+      ${colorsHTML}
+      <div class="sizes">${sizes}</div>
+      <button class="add">Agregar al pedido</button>
+    </div>
+  </article>`;
+}
+
+// Pinta la foto de la tarjeta según el color elegido (o la foto principal)
+function imgCard(card){
+  const p = P(card.dataset.id);
+  const sw = $('.swatch[aria-pressed="true"]', card);
+  const c = sw ? p.colores[+sw.dataset.color] : null;
+  setImg($("img",card), (c && c.img && c.img.trim()) || p.img, p.nombre, undefined, c);
+}
+// Al elegir otro color: la foto se atenúa un instante y aparece la nueva
+function cambiarImgCard(card){
+  const img = $("img",card);
+  img.style.opacity = ".25";
+  imgCard(card);
+  const mostrar = ()=>{ img.style.opacity = ""; };
+  if(img.complete && img.naturalWidth) mostrar();
+  else { img.addEventListener("load", mostrar, {once:true}); setTimeout(mostrar, 700); }
+}
+
+function pintar(cont, lista){
+  cont.innerHTML = lista.map(cardHTML).join("");
+  $$(".card", cont).forEach(imgCard);
+}
+
+// Buscador: sin distinguir mayúsculas ni tildes; todas las palabras deben aparecer
+// en el nombre, la categoría o los colores del producto.
+let busqueda = "";
+const sinAcentos = t => String(t||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const textoBusqueda = p => sinAcentos([p.nombre, p.cat, ...(p.colores||[]).map(c=>c.nombre)].join(" "));
+const escBusq = t => t.replace(/[&<>"']/g, ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+
+function render(){
+  let lista = CONFIG.productos.slice();
+  if(filtro==="top")   lista = lista.filter(p=>p.top);
+  if(filtro==="nuevo") lista = lista.filter(p=>p.nuevo);
+  if(CONFIG.categorias.includes(filtro)) lista = lista.filter(p=>p.cat===filtro);
+  const palabras = sinAcentos(busqueda).split(/\s+/).filter(Boolean);
+  if(palabras.length) lista = lista.filter(p=>{ const t = textoBusqueda(p); return palabras.every(w=>t.includes(w)); });
+  if(rangoPrecio >= 0){
+    const r = RANGOS[rangoPrecio];
+    lista = lista.filter(p=> (r.min==null || p.precio>=r.min) && (r.max==null || p.precio<=r.max));
+  }
+  const porNombre = (a,b)=>collator.compare(a.nombre, b.nombre);
+  if(orden==="az")          lista.sort(porNombre);
+  if(orden==="precio-asc")  lista.sort((a,b)=>a.precio-b.precio || porNombre(a,b));
+  if(orden==="precio-desc") lista.sort((a,b)=>b.precio-a.precio || porNombre(a,b));
+  pintar($("#grid"), lista);
+  const n = lista.length;
+  $("#resCount").textContent = n + (n===1 ? " producto" : " productos");
+  if(!n) $("#grid").innerHTML = `<div style="grid-column:1/-1;color:var(--muted)">${busqueda.trim() ? `No encontramos resultados para <b style="color:var(--txt)">“${escBusq(busqueda.trim())}”</b>.` : "No hay productos con esos filtros."}<br><button class="fbtn clear-filters">Quitar filtros</button></div>`;
+}
+
+// Marca en verde los selectores que están cambiando el listado
+function syncTools(){
+  $("#sortWrap").classList.toggle("on", orden!=="original");
+  const pw = $("#priceWrap"); if(pw) pw.classList.toggle("on", rangoPrecio>=0);
+}
+function quitarFiltros(){
+  filtro = "todos"; rangoPrecio = -1; busqueda = "";
+  $("#busq").value = ""; $("#searchBox").classList.remove("on");
+  $$("#filters .fbtn[data-f]").forEach(x=>x.setAttribute("aria-pressed", x.dataset.f==="todos"));
+  const ps = $("#priceSel"); if(ps) ps.value = "";
+  syncTools(); render();
+}
+
+// Filtros
+$("#filters").innerHTML =
+  `<span class="lbl">Ver:</span>` +
+  `<button class="fbtn" data-f="todos" aria-pressed="true">Todos</button>` +
+  `<button class="fbtn" data-f="top" aria-pressed="false">⭐ Top</button>` +
+  `<button class="fbtn" data-f="nuevo" aria-pressed="false">🆕 Nuevo</button>` +
+  CONFIG.categorias.map(c=>`<button class="fbtn" data-f="${c}" aria-pressed="false">${c}</button>`).join("") +
+  `<div class="tools">` +
+    `<label class="sel" id="sortWrap"><span>Ordenar</span><select id="sortSel">` +
+      ORDENES.map(o=>`<option value="${o.v}" ${o.v===orden?"selected":""}>${o.t}</option>`).join("") +
+    `</select></label>` +
+    (RANGOS.length ? `<label class="sel" id="priceWrap"><span>Precio</span><select id="priceSel">` +
+      `<option value="">Todos</option>` +
+      RANGOS.map((r,i)=>`<option value="${i}">${rangoTxt(r)}</option>`).join("") +
+    `</select></label>` : "") +
+    `<span class="count" id="resCount" aria-live="polite"></span>` +
+    `<button class="fbtn size-guide" id="openSizes">📏 Guía de talles</button>` +
+  `</div>`;
+
+$("#sortSel").addEventListener("change", e=>{ orden = e.target.value; syncTools(); render(); });
+if($("#priceSel")) $("#priceSel").addEventListener("change", e=>{
+  rangoPrecio = e.target.value==="" ? -1 : +e.target.value; syncTools(); render();
+});
+$("#grid").addEventListener("click", e=>{ if(e.target.closest(".clear-filters")) quitarFiltros(); });
+
+// Buscador: filtra mientras escribís
+const busqInput = $("#busq"), busqBox = $("#searchBox");
+busqInput.addEventListener("input", ()=>{
+  busqueda = busqInput.value;
+  busqBox.classList.toggle("on", busqueda.trim() !== "");
+  render();
+});
+busqInput.addEventListener("keydown", e=>{
+  if(e.key === "Enter"){ e.preventDefault(); busqInput.blur(); }   // en el celu cierra el teclado
+  if(e.key === "Escape" && busqInput.value){ busqInput.value = ""; busqInput.dispatchEvent(new Event("input")); }
+});
+$("#busqClr").addEventListener("click", ()=>{ busqInput.value = ""; busqInput.dispatchEvent(new Event("input")); busqInput.focus(); });
+// Lupa del encabezado: baja al catálogo y deja el cursor en el buscador
+$("#searchBtn").addEventListener("click", ()=>{
+  busqBox.scrollIntoView({behavior:"smooth", block:"start"});
+  setTimeout(()=>busqInput.focus({preventScroll:true}), 400);
+});
+syncTools();
+
+$("#filters").addEventListener("click", e=>{
+  const b = e.target.closest(".fbtn[data-f]"); if(!b) return;
+  filtro = b.dataset.f;
+  $$("#filters .fbtn[data-f]").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  render();
+});
+
+pintar($("#rail"), CONFIG.productos.filter(p=>p.top));
+render();
+
+/* ---------- Stock automático del proveedor ---------- */
+// Pinta la página al toque con el stock "de fábrica" (arriba), y apenas
+// llega la respuesta del proveedor, la actualiza con el stock real.
+// Si el proveedor no responde o algo falla, la página sigue funcionando
+// igual, con el stock que ya tenía cargado.
+function aplicarStockProveedor(porImagen){
+  if(!porImagen) return;
+  CONFIG.productos.forEach(p=>{
+    if(p.colores && p.colores.length){
+      // Primero juntamos TODOS los talles que el proveedor tiene para
+      // cualquier color de este producto — así, si el proveedor vende un
+      // talle que nosotros no teníamos cargado (ej: un 37 que nos faltaba),
+      // se agrega al selector en vez de quedar invisible para siempre.
+      const tallesProveedor = new Set();
+      p.colores.forEach(c=>{
+        const info = porImagen[c.img || p.img];
+        if(info) Object.keys(info).forEach(t => tallesProveedor.add(Number(t)));
+      });
+      if(tallesProveedor.size){
+        const talles = new Set(p.talles);
+        tallesProveedor.forEach(t => talles.add(t));
+        p.talles = [...talles].sort((a,b)=>a-b);
+      }
+      p.colores.forEach(c=>{
+        const info = porImagen[c.img || p.img];
+        if(!info) return; // sin match: dejamos el stock que ya tenía cargado
+        c.sinStock = p.talles.filter(t => !((info[t]||0) > 0));
+        delete c.talles; // el sinStock recién calculado ya define todo
+      });
+    } else {
+      const info = porImagen[p.img];
+      if(!info) return;
+      const talles = new Set(p.talles);
+      Object.keys(info).forEach(t => talles.add(Number(t)));
+      p.talles = [...talles].sort((a,b)=>a-b);
+      p.sinStock = p.talles.filter(t => !((info[t]||0) > 0));
+    }
+  });
+}
+
+// Suma al catálogo los productos que el proveedor tiene y nosotros todavía no
+// (mismo criterio que el servidor: se identifican por foto, para no duplicar
+// nada que ya hayas cargado vos a mano).
+function agregarProductosNuevos(nuevos){
+  if(!Array.isArray(nuevos) || !nuevos.length) return;
+  const fotosPropias = new Set();
+  CONFIG.productos.forEach(p=>{
+    if(p.img) fotosPropias.add(p.img);
+    (p.colores||[]).forEach(c=>{ if(c.img) fotosPropias.add(c.img); });
+  });
+  nuevos.forEach(n=>{
+    if(fotosPropias.has(n.img)) return; // ya lo tenés cargado, no lo duplicamos
+    if(CONFIG.productos.some(p=>p.id===n.id)) return;
+    CONFIG.productos.push(n);
+    fotosPropias.add(n.img);
+  });
+}
+
+if(CONFIG.sincronizarStock){
+  fetch(CONFIG.endpointStock)
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if(!data) return;
+      if(CONFIG.publicarNuevos) agregarProductosNuevos(data.nuevos);
+      aplicarStockProveedor(data.porImagen);
+      pintar($("#rail"), CONFIG.productos.filter(p=>p.top));
+      render();
+    })
+    .catch(()=>{ /* seguimos con el catálogo de fábrica, sin romper la página */ });
+}
+
+// Flechas del carrusel
+$("#railPrev").onclick = ()=> $("#rail").scrollBy({left:-280,behavior:"smooth"});
+$("#railNext").onclick = ()=> $("#rail").scrollBy({left: 280,behavior:"smooth"});
+
+// Selección de talle + agregar
+document.addEventListener("click", e=>{
+  const s = e.target.closest(".size");
+  if(s && !s.disabled){
+    const card = s.closest(".card");
+    $$(".size",card).forEach(x=>x.setAttribute("aria-pressed", x===s));
+  }
+  const sw = e.target.closest(".swatch");
+  if(sw){
+    const card = sw.closest(".card");
+    const p = P(card.dataset.id);
+    $$(".swatch",card).forEach(x=>x.setAttribute("aria-pressed", x===sw));
+    $(".clbl b",card).textContent = p.colores[+sw.dataset.color].nombre;
+    cambiarImgCard(card);
+    actualizarTalles(card, true);
+  }
+  const add = e.target.closest(".add");
+  if(add){
+    const card = add.closest(".card");
+    const p = P(card.dataset.id);
+    const sel = $('.size[aria-pressed="true"]', card);
+    const selC = $('.swatch[aria-pressed="true"]', card);
+    const faltan = [];
+    if((p.colores||[]).length && !selC) faltan.push("color");
+    if(!sel) faltan.push("talle");
+    if(faltan.length){ toast("Elegí " + faltan.map(f=>"un "+f).join(" y ") + " primero 👆"); return; }
+    addToCart(p.id, sel.dataset.size, selC ? p.colores[+selC.dataset.color].nombre : "");
+    add.textContent = "✓ Agregado";
+    add.classList.add("added");
+    setTimeout(()=>{ add.textContent="Agregar al pedido"; add.classList.remove("added"); },1200);
+  }
+});
+
+/* ---------- Zoom de imágenes de productos ---------- */
+const productZoom=$("#productZoom"), productZoomImg=$("#productZoomImg"), productZoomClose=$("#productZoomClose");
+function openProductZoom(img){ if(!img) return; productZoomImg.src=img.currentSrc||img.src; productZoomImg.alt=img.alt||"Imagen ampliada del producto"; productZoom.classList.add("open"); lockBody(); }
+function closeProductZoom(){ if(!productZoom.classList.contains("open")) return; productZoom.classList.remove("open"); productZoomImg.removeAttribute("src"); unlockBody(); }
+document.addEventListener("click",e=>{ const img=e.target.closest(".card .ph img"); if(img){e.preventDefault();e.stopPropagation();openProductZoom(img);} });
+productZoomClose.addEventListener("click",closeProductZoom);
+productZoom.addEventListener("click",e=>{if(e.target===productZoom)closeProductZoom();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeProductZoom();});
+
+/* ---------- Carrito ---------- */
+let cart = [];
+try{ const raw = localStorage.getItem("cart_botines"); if(raw) cart = JSON.parse(raw)||[]; }catch(e){}
+function save(){ try{ localStorage.setItem("cart_botines", JSON.stringify(cart)); }catch(e){} }
+
+// Datos del formulario de envío, guardados en cada tecleo para no
+// perderlos si el usuario vuelve al paso 1 y avanza otra vez.
+let formData = {};
+try{ formData = JSON.parse(localStorage.getItem("datos_botines") || "{}"); }catch(e){ formData = {}; }
+function saveFormField(id, val){ formData[id] = val; try{ localStorage.setItem("datos_botines", JSON.stringify(formData)); }catch(e){} }
+
+let step = 1;
+const drawer = $("#drawer"), overlay = $("#overlay");
+
+function addToCart(id,size,color=""){
+  const found = cart.find(i=>i.id===id && i.size===size && (i.color||"")===color);
+  if(found) found.qty++;
+  else cart.push({id,size,color,qty:1});
+  save(); updateCount(); toast("Agregado al pedido 🛒");
+  if(drawer.classList.contains("open")) drawerRender();
+}
+function updateCount(){ $("#cartCount").textContent = cart.reduce((a,i)=>a+i.qty,0); }
+updateCount();
+
+// Descuento: se cuenta por rubro (categoría). 2 del mismo rubro = 10%, 3 o más = 15%
+function calc(){
+  const porCat = {};
+  cart.forEach(i=>{ const p=P(i.id); if(!p) return; porCat[p.cat]=(porCat[p.cat]||0)+i.qty; });
+  let sub=0, desc=0;
+  cart.forEach(i=>{
+    const p=P(i.id); if(!p) return;
+    const n = porCat[p.cat];
+    let pct = 0;
+    CONFIG.promos.forEach((pr,idx)=>{ if(n >= idx+2) pct = pr.off; });
+    sub += p.precio*i.qty;
+    desc += p.precio*i.qty*pct/100;
+  });
+  return { sub, desc:Math.round(desc), porCat };
+}
+function faltaPara(){
+  const {porCat} = calc();
+  for(const cat in porCat){
+    const n = porCat[cat];
+    if(n===1) return {cat, off:CONFIG.promos[0].off, faltan:1};
+    if(n===2 && CONFIG.promos[1]) return {cat, off:CONFIG.promos[1].off, faltan:1};
+  }
+  return null;
+}
+
+function scrollDrawerTop(){ const b=$("#drawerBody"); if(b) b.scrollTop = 0; }
+
+function drawerRender(){
+  $$(".step").forEach(s=>s.classList.toggle("on", +s.dataset.step===step));
+  const body=$("#drawerBody"), foot=$("#drawerFoot");
+  const {sub,desc}=calc();
+
+  if(step===3){ pintarPaso3(body, foot); return; }
+
+  if(!cart.length){
+    body.innerHTML = `<div class="empty"><span class="big">🛒</span><b>Tu pedido está vacío</b><br><small>Agregá un par para empezar</small></div>`;
+    foot.innerHTML = `<button class="lbtn" data-close>Ver los botines 🔥</button>`;
+    return;
+  }
+
+  if(step===1){
+    const zona0 = CONFIG.zonas.find(z=>z.nombre===formData.zona);
+    const envio0 = zona0 ? zona0.costo : CONFIG.zonas[0].costo;
+    const n = faltaPara();
+    body.innerHTML =
+      (n?`<div class="nudge"><b>🔥 Te falta 1 para la promo</b>Agregá otro de "${n.cat}" y te llevás ${n.off}% OFF en los dos.</div>`:"") +
+      cart.map((i,ix)=>{
+        const p=P(i.id); if(!p) return "";
+        return `<div class="ci">
+          <img data-ci="${ix}" alt="${p.nombre}">
+          <div class="info">
+            <h4>${p.nombre}</h4>
+            <small>${i.color?`Color ${i.color} · `:""}Talle ${i.size} · ${money(p.precio)}</small>
+            <div class="qty">
+              <button data-dec="${ix}" aria-label="Quitar uno">−</button>
+              <span>${i.qty}</span>
+              <button data-inc="${ix}" aria-label="Agregar uno">+</button>
+            </div>
+            <button class="rm" data-rm="${ix}">Quitar</button>
+          </div>
+        </div>`;
+      }).join("");
+    cart.forEach((i,ix)=>{ const im=$(`[data-ci="${ix}"]`,body); const p=P(i.id); if(im&&p) setImg(im,imgDe(p,i.color),p.nombre,undefined,colorDe(p,i.color)); });
+    foot.innerHTML = `
+      <div class="totals">
+        <div class="r"><span>Subtotal</span><span>${money(sub)}</span></div>
+        ${desc?`<div class="r disc"><span>Descuento promo</span><span>−${money(desc)}</span></div>`:""}
+        <div class="r"><span>Envío</span><span>${money(envio0)}</span></div>
+        <div class="r sum"><span>Total</span><span>${money(sub-desc+envio0)}</span></div>
+      </div>
+      <button class="lbtn" id="goStep2">Continuar pedido →</button>
+      <button class="tbtn" data-close>← Seguir comprando</button>`;
+    $("#goStep2").onclick = ()=>{ step=2; drawerRender(); scrollDrawerTop(); };
+  }
+
+  if(step===2){
+    body.innerHTML = `
+      <h4 style="font-size:14px;margin-bottom:10px">📍 Datos de envío</h4>
+      <div class="field" id="f-nombre"><label>Nombre y apellido *</label><input id="nombre" placeholder="Juan Pérez" autocomplete="name"><span class="err">Completá tu nombre</span></div>
+      <div class="field"><label>Instagram (opcional)</label><input id="ig" placeholder="@usuario" autocomplete="off"></div>
+      <div class="field" id="f-tel"><label>Teléfono / WhatsApp *</label><input id="tel" type="tel" inputmode="tel" placeholder="11 2345 6789" autocomplete="tel"><span class="err">Completá tu teléfono</span></div>
+      <div class="field" id="f-zona"><label>Zona de envío *</label>
+        <select id="zona"><option value="">— Elegí tu zona —</option>
+        ${CONFIG.zonas.map(z=>`<option value="${z.nombre}">${z.nombre} (${money(z.costo)})</option>`).join("")}
+        </select><span class="err">Elegí una zona</span></div>
+      <div class="field" id="f-dir"><label>Dirección *</label><input id="dir" placeholder="Calle y número" autocomplete="street-address"><span class="err">Completá la dirección</span></div>
+      <div class="field" id="f-barrio"><label>Barrio / Localidad *</label><input id="barrio" placeholder="Ej: Villa Urquiza" autocomplete="address-level2"><span class="err">Completá tu barrio</span></div>
+      <div class="field"><label>Aclaraciones</label><textarea id="acl" placeholder="Timbre, horario preferido, referencia..."></textarea></div>`;
+    // restaurar datos guardados (de este pedido o de un pedido anterior)
+    ["nombre","ig","tel","zona","dir","barrio","acl"].forEach(k=>{ if(formData[k] && $("#"+k)) $("#"+k).value = formData[k]; });
+    $("#zona").onchange = ()=>{ saveFormField("zona", $("#zona").value); drawerFoot2(); };
+    drawerFoot2();
+  }
+
+  function drawerFoot2(){
+    const z = CONFIG.zonas.find(x=>x.nombre===($("#zona")?$("#zona").value:"")) || null;
+    const env = z ? z.costo : 0;
+    const usaMP = !!CONFIG.pagoMercadoPago, usaWA = !!CONFIG.pagoWhatsApp || !usaMP;
+    const seguro = usaMP && usaWA ? "Pagás online con Mercado Pago o en efectivo al recibir 🔐"
+                 : usaMP ? "Pago seguro con Mercado Pago 🔐"
+                 : "Sin adelanto · Pagás cuando llega 🔐";
+    $("#drawerFoot").innerHTML = `
+      <div class="totals">
+        <div class="r"><span>Productos</span><span>${money(sub-desc)}</span></div>
+        <div class="r"><span>Envío</span><span>${z?money(env):"a definir"}</span></div>
+        <div class="r sum"><span>Total</span><span>${money(sub-desc+env)}</span></div>
+      </div>
+      <p class="pay-err" id="payErr" role="alert"></p>
+      ${usaMP?`<button class="mpbtn" id="payMP">${MP_LABEL}</button>`:""}
+      ${usaWA?`<button class="wbtn${usaMP?" alt":""}" id="finish">${usaMP?"💬 Pedir por WhatsApp · efectivo al recibir":"💬 Finalizar por WhatsApp"}</button>`:""}
+      <button class="tbtn" id="back1">← Volver al carrito</button>
+      <p class="secure">${seguro}</p>`;
+    $("#back1").onclick=()=>{ step=1; drawerRender(); scrollDrawerTop(); };
+    if(usaMP) $("#payMP").onclick = pagarMP;
+    if(usaWA) $("#finish").onclick = finalizar;
+  }
+
+}
+
+// Guarda cada campo del formulario mientras el usuario escribe, así
+// no se pierde nada si vuelve al paso 1 o cierra el carrito por error.
+$("#drawerBody").addEventListener("input", e=>{
+  const el = e.target;
+  if(el.matches("#nombre,#ig,#tel,#dir,#barrio,#acl,#zona")) saveFormField(el.id, el.value);
+});
+
+// En mobile, cuando el teclado tapa el campo que se está completando,
+// lo llevamos a la vista para que el usuario siga viendo lo que escribe.
+$("#drawerBody").addEventListener("focusin", e=>{
+  if(e.target.matches("input,select,textarea")){
+    setTimeout(()=> e.target.scrollIntoView({block:"center", behavior:"smooth"}), 280);
+  }
+});
+
+let lastLink = "https://wa.me/"+CONFIG.whatsapp;
+let resultadoPago = null;   // resultado al volver de Mercado Pago (null = flujo normal de WhatsApp)
+const MP_LABEL = "💳 Pagar con Mercado Pago";
+
+// Valida el formulario de envío y devuelve los datos (o null si falta algo)
+function leerFormulario(){
+  const req = [["nombre","f-nombre"],["tel","f-tel"],["zona","f-zona"],["dir","f-dir"],["barrio","f-barrio"]];
+  let ok = true, firstBad = null;
+  req.forEach(([id,f])=>{
+    const bad = !$("#"+id).value.trim();
+    $("#"+f).classList.toggle("bad", bad);
+    if(bad){ ok=false; if(!firstBad) firstBad = id; }
+  });
+  if(!ok){
+    toast("Faltan datos obligatorios");
+    if(firstBad) $("#"+firstBad).scrollIntoView({block:"center", behavior:"smooth"});
+    return null;
+  }
+  const d = { nombre:$("#nombre").value.trim(), ig:$("#ig").value.trim(), tel:$("#tel").value.trim(),
+              zona:$("#zona").value, dir:$("#dir").value.trim(), barrio:$("#barrio").value.trim(), acl:$("#acl").value.trim() };
+  formData = d;
+  try{ localStorage.setItem("datos_botines", JSON.stringify(d)); }catch(e){}
+  return d;
+}
+
+// Foto del pedido tal cual está en este momento (se usa para WhatsApp y para Mercado Pago)
+function armarPedido(d){
+  const {sub,desc}=calc();
+  const envio = (CONFIG.zonas.find(z=>z.nombre===d.zona)||{costo:0}).costo;
+  const lineas = cart.map(i=>{ const p=P(i.id); return `• ${p.nombre}${i.color?` — Color ${i.color}`:""} — Talle ${i.size} × ${i.qty} — ${money(p.precio*i.qty)}`; });
+  return { d, lineas, sub, desc, envio, total: sub-desc+envio };
+}
+
+function textoPedido(ped, saludo, pagoLinea){
+  const d = ped.d;
+  return `${saludo}
+
+${ped.lineas.join("\n")}
+
+Subtotal: ${money(ped.sub)}${ped.desc?`\nDescuento promo: -${money(ped.desc)}`:""}
+Envío (${d.zona}): ${money(ped.envio)}
+TOTAL: ${money(ped.total)}
+
+📍 Datos de envío
+Nombre: ${d.nombre}
+Teléfono: ${d.tel}${d.ig?`\nInstagram: ${d.ig}`:""}
+Dirección: ${d.dir}
+Barrio: ${d.barrio}${d.acl?`\nAclaraciones: ${d.acl}`:""}
+
+${pagoLinea}`;
+}
+
+/* ---------- Pago en efectivo: pedido por WhatsApp ---------- */
+async function finalizar(){
+  const d = leerFormulario(); if(!d) return;
+
+  const finishBtn = $("#finish");
+  if(finishBtn){ finishBtn.disabled = true; finishBtn.textContent = "Abriendo WhatsApp…"; }
+
+  const ped = armarPedido(d);
+
+  // Guardamos el pedido en el servidor (mismo lugar y buscador que los de
+  // Mercado Pago) para que quede la dirección igual, con o sin WhatsApp.
+  // Si esto falla o tarda, igual dejamos que el cliente mande el WhatsApp:
+  // nunca le bloqueamos el pedido por un problema nuestro.
+  let ref = "";
+  try{
+    const ctl = new AbortController();
+    const timer = setTimeout(()=>ctl.abort(), 5000);
+    const r = await fetch(CONFIG.endpointPedidoEfectivo, {
+      method:"POST", headers:{"Content-Type":"application/json"}, signal: ctl.signal,
+      body: JSON.stringify({ items: cart.map(i=>({id:i.id,size:i.size,color:i.color||"",qty:i.qty})), cliente:d })
+    });
+    clearTimeout(timer);
+    const data = await r.json().catch(()=>({}));
+    if(data.ref) ref = data.ref;
+  }catch(e){ /* seguimos igual, sin bloquear el pedido */ }
+
+  lastLink = "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(
+    textoPedido(ped, "¡Hola! Quiero hacer este pedido 👟"+(ref?`\nN° de pedido: ${ref}`:""), "Pago en efectivo al recibir ✅"));
+  window.open(lastLink,"_blank");
+  resultadoPago = null; step=3; drawerRender(); scrollDrawerTop();
+}
+
+/* ---------- Pago online: Mercado Pago ---------- */
+function errorPago(msg){ const e=$("#payErr"); if(e) e.textContent = msg||""; }
+
+async function pagarMP(){
+  const d = leerFormulario(); if(!d) return;
+  const btn = $("#payMP"), btnWA = $("#finish");
+  const bloquear = on => {
+    if(btn){ btn.disabled = on; btn.textContent = on ? "Conectando con Mercado Pago…" : MP_LABEL; }
+    if(btnWA) btnWA.disabled = on;
+  };
+  errorPago(""); bloquear(true);
+
+  const ped = armarPedido(d);
+  const ctl = new AbortController();
+  const timer = setTimeout(()=>ctl.abort(), 20000);
+  try{
+    const r = await fetch(CONFIG.endpointPago, {
+      method:"POST", headers:{"Content-Type":"application/json"}, signal: ctl.signal,
+      body: JSON.stringify({
+        items: cart.map(i=>({ id:i.id, size:i.size, color:i.color||"", qty:i.qty })),
+        cliente: d,
+        totalMostrado: ped.total          // el servidor recalcula; esto solo sirve para avisar si cambiaron los precios
+      })
+    });
+    const data = await r.json().catch(()=>({}));
+    if(!r.ok || !/^https:\/\//.test(data.init_point||"")){
+      const e = new Error("pago"); e.userMsg = data.error || "No pudimos iniciar el pago. Probá de nuevo o pedí por WhatsApp."; throw e;
+    }
+    // Guardamos el pedido para poder armar el resumen cuando el cliente vuelva
+    try{ localStorage.setItem("pedido_mp", JSON.stringify({...ped, ref:data.ref, ts:Date.now()})); }catch(e){}
+    window.location.href = data.init_point;   // → Mercado Pago
+  }catch(err){
+    bloquear(false);
+    errorPago(err.userMsg || (err.name==="AbortError"
+      ? "Mercado Pago tardó demasiado en responder. Probá de nuevo."
+      : "No pudimos conectar con Mercado Pago. Revisá tu conexión y probá de nuevo."));
+  }finally{ clearTimeout(timer); }
+}
+
+// Si el cliente vuelve con el botón "atrás" desde Mercado Pago, el navegador puede
+// restaurar la página con el botón trabado en "Conectando…": lo re-dibujamos.
+window.addEventListener("pageshow", e=>{
+  if(e.persisted && drawer.classList.contains("open") && step===2) drawerRender();
+});
+
+/* ---------- Paso 3: confirmación (WhatsApp o resultado de Mercado Pago) ---------- */
+function linkWAResultado(r){
+  const ref = r.ref || "";
+  const pagoTxt = (r.estado==="ok" ? "✅ Pagado con Mercado Pago"
+                 : r.estado==="pendiente" ? "⏳ Pago pendiente de acreditación (Mercado Pago)"
+                 : "Pagué con Mercado Pago (todavía sin verificar)") + (r.paymentId ? ` · Pago N° ${r.paymentId}` : "");
+  const msg = r.pedido
+    ? textoPedido(r.pedido, `¡Hola! Hice este pedido 👟${ref?`\nN° de pedido: ${ref}`:""}`, pagoTxt)
+    : `¡Hola! Hice el pedido${ref?" "+ref:""} y pagué con Mercado Pago${r.paymentId?` (Pago N° ${r.paymentId})`:""}. Te paso mis datos de envío para coordinar la entrega:`;
+  return "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(msg);
+}
+
+function pintarPaso3(body, foot){
+  const r = resultadoPago;
+  if(!r){   // flujo WhatsApp (efectivo al recibir)
+    body.innerHTML = `<div class="empty"><span class="big">✅</span><b>¡Pedido enviado!</b><br>
+      <small>Te abrimos WhatsApp con el resumen. Si no se abrió, tocá el botón de abajo.</small></div>`;
+    foot.innerHTML = `<button class="wbtn" id="again">💬 Abrir WhatsApp</button>
+      <button class="tbtn" data-close>Cerrar</button>`;
+    $("#again").onclick = ()=> window.open(lastLink,"_blank");
+    return;
+  }
+  const refTxt = r.ref ? ` Tu número de pedido es <b>${r.ref}</b>.` : "";
+  const V = {
+    verificando:  ["⏳","Verificando tu pago…","Un segundo, lo estamos confirmando con Mercado Pago."],
+    ok:           ["✅","¡Pago aprobado!","Recibimos tu pago."+refTxt+" Mandanos los datos por WhatsApp y coordinamos la entrega."],
+    pendiente:    ["⏳","Tu pago está pendiente","Apenas Mercado Pago lo acredite, lo confirmamos."+refTxt+" Mientras tanto, mandanos el pedido por WhatsApp."],
+    sinverificar: ["ℹ️","No pudimos verificar el pago","Si pagaste, mandanos el pedido por WhatsApp y lo revisamos a mano."+refTxt],
+    fallo:        ["❌","No se pudo completar el pago","Tu pedido sigue guardado: podés intentar de nuevo."]
+  }[r.estado];
+  body.innerHTML = `<div class="empty"><span class="big">${V[0]}</span><b>${V[1]}</b><br><small>${V[2]}</small></div>`;
+
+  if(r.estado==="verificando"){
+    foot.innerHTML = `<button class="tbtn" data-close>Cerrar</button>`;
+  }else if(r.estado==="fallo"){
+    foot.innerHTML = (cart.length ? `<button class="mpbtn" id="retryPay">Volver a intentar</button>` : "") +
+                     `<button class="tbtn" data-close>Cerrar</button>`;
+    const b=$("#retryPay"); if(b) b.onclick = ()=>{ resultadoPago=null; step=2; drawerRender(); scrollDrawerTop(); };
+  }else{
+    foot.innerHTML = `<button class="wbtn" id="sendWA">💬 Enviar mi pedido por WhatsApp</button>
+      <button class="tbtn" data-close>Cerrar</button>`;
+    $("#sendWA").onclick = ()=> window.open(linkWAResultado(r),"_blank");
+  }
+}
+
+/* ---------- Eventos del carrito ---------- */
+$("#drawerBody").addEventListener("click", e=>{
+  const inc=e.target.closest("[data-inc]"), dec=e.target.closest("[data-dec]"), rm=e.target.closest("[data-rm]");
+  if(inc){ cart[+inc.dataset.inc].qty++; save(); updateCount(); drawerRender(); }
+  if(dec){ const i=+dec.dataset.dec; cart[i].qty--; if(cart[i].qty<1) cart.splice(i,1); save(); updateCount(); drawerRender(); }
+  if(rm){ cart.splice(+rm.dataset.rm,1); save(); updateCount(); drawerRender(); }
+});
+
+function openDrawer(){
+  step = 1; resultadoPago = null;
+  lockBody();
+  drawer.classList.add("open"); overlay.classList.add("open");
+  drawerRender();
+  scrollDrawerTop();
+}
+function closeAll(){
+  const wasOpen = drawer.classList.contains("open") || $$(".modal.open").length;
+  drawer.classList.remove("open"); overlay.classList.remove("open");
+  $$(".modal").forEach(m=>m.classList.remove("open"));
+  if(wasOpen) unlockBody();
+}
+$("#cartBtn").onclick = openDrawer;
+overlay.onclick = closeAll;
+document.addEventListener("click", e=>{ if(e.target.closest("[data-close]")) closeAll(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeAll(); });
+
+// En mobile, cuando aparece el teclado, algunos navegadores no
+// achican el "layout viewport" aunque sí achican el "visual viewport".
+// Ajustamos la altura real del drawer para que el botón de finalizar
+// nunca quede tapado por el teclado.
+if(window.visualViewport){
+  window.visualViewport.addEventListener("resize", ()=>{
+    if(drawer.classList.contains("open")){
+      drawer.style.height = window.visualViewport.height + "px";
+    }
+  });
+}
+
+/* ---------- Modales de info ---------- */
+$("#flinks").addEventListener("click", e=>{
+  const b=e.target.closest("[data-info]"); if(!b) return;
+  const s=CONFIG.info[+b.dataset.info];
+  $("#infoTitle").textContent = s.ico+" "+s.titulo;
+  $("#infoBody").innerHTML = s.html;
+  lockBody();
+  overlay.classList.add("open"); $("#infoModal").classList.add("open");
+  $("#infoModal").scrollTop = 0;
+});
+$("#openSizes").onclick = ()=>{ lockBody(); overlay.classList.add("open"); $("#sizeModal").classList.add("open"); };
+
+/* ---------- Vuelta desde Mercado Pago ----------
+   Mercado Pago devuelve al cliente a esta misma página agregando datos en la URL
+   (payment_id, status, external_reference…). Esos datos los puede escribir cualquiera,
+   así que NO alcanzan para dar el pago por bueno: el estado real se consulta al servidor. */
+(function volverDeMercadoPago(){
+  if(!CONFIG.pagoMercadoPago) return;
+  const q = new URLSearchParams(location.search);
+  const refUrl = q.get("external_reference") || "";
+  if(!q.has("preference_id") && !refUrl.startsWith("BA-")) return;
+
+  const refValida = v => /^BA-[A-Z0-9]{4,24}$/.test(v||"") ? v : "";
+  const idBruto = q.get("payment_id") || q.get("collection_id") || "";
+  const paymentId = /^\d{5,20}$/.test(idBruto) ? idBruto : "";
+  const statusUrl = q.get("status") || q.get("collection_status") || "";
+  const ref = refValida(refUrl);
+  history.replaceState(null, "", location.pathname);   // limpiamos la URL
+
+  let guardado = null;
+  try{ guardado = JSON.parse(localStorage.getItem("pedido_mp") || "null"); }catch(e){}
+  const pedido = (guardado && ref && guardado.ref===ref) ? guardado : null;
+
+  resultadoPago = {
+    estado: paymentId ? "verificando" : (["approved","pending","in_process"].includes(statusUrl) ? "sinverificar" : "fallo"),
+    paymentId, ref, pedido
+  };
+  step = 3; lockBody();
+  drawer.classList.add("open"); overlay.classList.add("open");
+  drawerRender();
+
+  const terminar = ()=>{
+    // pago aprobado o en proceso → el pedido ya está hecho, vaciamos el carrito
+    if(resultadoPago.estado==="ok" || resultadoPago.estado==="pendiente"){ cart = []; save(); updateCount(); }
+    drawerRender();
+  };
+  if(!paymentId){ terminar(); return; }
+
+  fetch(CONFIG.endpointEstado + "?payment_id=" + paymentId)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => {
+      if(ref && d.ref !== ref) throw new Error("otro pedido");
+      resultadoPago.ref = refValida(d.ref) || ref;
+      resultadoPago.estado = ({ approved:"ok", authorized:"pendiente", pending:"pendiente", in_process:"pendiente", in_mediation:"pendiente" })[d.status] || "fallo";
+    })
+    .catch(()=>{ resultadoPago.estado = "sinverificar"; })
+    .finally(terminar);
+})();
+</script>
+</body>
+</html>

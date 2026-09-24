@@ -1,0 +1,8 @@
+{
+  "name": "boot-arg-tienda",
+  "private": true,
+  "dependencies": {
+    "mercadopago": "^2.0.15",
+    "@netlify/blobs": "^8.1.0"
+  }
+}
